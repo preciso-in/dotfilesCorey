@@ -8,7 +8,7 @@
 ############################
 
 # dotfiles directory
-dotfiledir="${HOME}/dotfiles"
+dotfiledir="${HOME}/dotfilesCorey"
 
 # list of files/folders to symlink in ${homedir}
 files=(zshrc zprofile zprompt bashrc bash_profile bash_prompt aliases private)
