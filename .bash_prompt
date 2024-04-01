@@ -1,8 +1,7 @@
+source "${HOME}/dotfilesCorey/.shared_prompt"
 
-source "${HOME}/dotfiles/.shared_prompt"
-
-PS1="\$(prompt_venv)" # virtual environment
-PS1+="\[${bold}\]\n" # newline
+PS1="\$(prompt_venv)"     # virtual environment
+PS1+="\[${bold}\]\n"      # newline
 PS1+="\[${userStyle}\]\u" # username
 PS1+="\[${white}\] at "
 PS1+="\[${hostStyle}\]\h" # host
