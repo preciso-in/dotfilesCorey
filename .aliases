@@ -1,9 +1,6 @@
 # Shortcuts
 alias ch='history | grep "git commit"'
 alias hg='history | grep'
-alias yt="subl '$HOME/Google Drive/My Drive/YouTube/Scripts/'"
-alias cyt="cd '$HOME/Google Drive/My Drive/YouTube/Scripts/'"
-alias oyt="open '$HOME/Google Drive/My Drive/YouTube/Scripts/'"
 
 # Detect which `ls` flavor is in use
 if ls --color >/dev/null 2>&1; then # GNU `ls`
@@ -38,18 +35,16 @@ alias update_brew='brew update; brew upgrade; brew upgrade --cask; brew cleanup'
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
-# To prep before screencasts
-alias tut_mode='defaults write com.apple.dock autohide -bool true && killall Dock;
-               defaults write com.apple.finder CreateDesktop -bool false && killall Finder;
-               defaults write com.apple.menuextra.clock IsAnalog -bool true && killall SystemUIServer;
-               rm -rf ~/.Trash/*;
-               rm -rf ~/Downloads/*'
-alias reg_mode='defaults write com.apple.dock autohide -bool false && killall Dock;
-               defaults write com.apple.finder CreateDesktop -bool true && killall Finder;
-               defaults write com.apple.menuextra.clock IsAnalog -bool false && killall SystemUIServer;'
-
 alias clean='rm -rf ~/.Trash/*; rm -rf ~/Downloads/*'
 
-# Virtual Environments
-alias wipe_env='rm -rf ~/venvs/tutorial; python3 -m venv ~/venvs/tutorial'
-alias tut_env='source ~/venvs/tutorial/bin/activate'
+# Network Aliases
+alias chknet='ping -i 1 -c 5 google.com && ping -i 3 -c 5 google.com && ping -i 10 -c 5 google.com'
+alias tosh='ssh tosh-lin@192.168.0.102'
+
+# Zsh aliases
+alias cls="reset"
+alias loadusb='sudo pkill -f fsck'
+alias vim="nvim "
+
+# Git Aliases
+alias gsm='git switch main'

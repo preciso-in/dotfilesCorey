@@ -131,6 +131,7 @@ apps=(
     "sourcetree"
     "docker"
     "google-cloud-sdk"
+    "iterm2"
 )
 
 # Loop over the array to install each application.
