@@ -29,14 +29,55 @@ brew cleanup
 
 # Define an array of packages to install using Homebrew.
 packages=(
-    "python"
     "bash"
     "zsh"
     "git"
     "tree"
-    "pylint"
-    "black"
     "node"
+    "neovim"
+    "tmux"
+    "rsync"
+
+    # disk usage apps
+    "ncdu"
+    "dust"
+
+    # notify from command line
+    "ntfy"
+
+    # Extremely fast tool to remove dupes and other lint from your filesystem
+    "rmlint"
+
+    # Programmatically correct mistyped console commands
+    "thefuck"
+
+    # Simple, fast and user-friendly alternative to find
+    "fd"
+
+    # User-friendly cURL replacement (command-line HTTP client)
+    "httpie"
+
+    # JavaScript toolchain manager for reproducible environments
+    "volta"
+
+    # A simple terminal UI for both docker and docker-compose
+    "lazydocker"
+
+    # Better ls
+    "eza"
+
+    # Better cat
+    "bat"
+
+    # Run command when file changes
+    "entr"
+
+    # midnight commander - file manager
+    # https://www.youtube.com/watch?v=fJOkuaihAek
+    "midnight-commander"
+
+    # Improved shell history
+    "atuin"
 )
 
 # Loop over the array to install each application.
@@ -77,17 +118,19 @@ $(brew --prefix)/bin/npm install --global prettier
 apps=(
     "google-chrome"
     "firefox"
-    "brave-browser"
-    "sublime-text"
+    "arc"
+    "opera"
     "visual-studio-code"
-    "virtualbox"
-    "spotify"
-    "discord"
-    "google-drive"
-    "gimp"
     "vlc"
-    "rectangle"
     "postman"
+    "anki"
+    "warp"
+    "whatsapp"
+    "microsoft-remote-desktop"
+    "obsidian"
+    "sourcetree"
+    "docker"
+    "google-cloud-sdk"
 )
 
 # Loop over the array to install each application.
@@ -100,45 +143,8 @@ for app in "${apps[@]}"; do
     fi
 done
 
-# Install Source Code Pro Font
-# Tap the Homebrew font cask repository if not already tapped
-brew tap | grep -q "^homebrew/cask-fonts$" || brew tap homebrew/cask-fonts
-
-# Define the font name
-font_name="font-source-code-pro"
-
-# Check if the font is already installed
-if brew list --cask | grep -q "^$font_name\$"; then
-    echo "$font_name is already installed. Skipping..."
-else
-    echo "Installing $font_name..."
-    brew install --cask "$font_name"
-fi
-
-# Once font is installed, Import your Terminal Profile
-echo "Import your terminal settings..."
-echo "Terminal -> Settings -> Profiles -> Import..."
-echo "Import from ${HOME}/dotfiles/settings/Pro.terminal"
-echo "Press enter to continue..."
-read
-
 # Update and clean up again for safe measure
 brew update
 brew upgrade
 brew upgrade --cask
 brew cleanup
-
-echo "Sign in to Google Chrome. Press enter to continue..."
-read
-
-echo "Sign in to Spotify. Press enter to continue..."
-read
-
-echo "Sign in to Discord. Press enter to continue..."
-read
-
-echo "Open Rectangle and give it necessary permissions. Press enter to continue..."
-read
-
-echo "Import your Rectangle settings located in ~/dotfiles/settings/RectangleConfig.json. Press enter to continue..."
-read
