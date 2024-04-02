@@ -29,6 +29,8 @@ done
 # Install Powerline Meslo fonts
 git clone https://github.com/powerline/fonts.git && cd fonts && ./install.sh
 
+cd $dotfiledir
+
 # Run the Homebrew Script
 ./brew.sh
 
