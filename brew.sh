@@ -27,6 +27,9 @@ brew upgrade
 brew upgrade --cask
 brew cleanup
 
+# Rust apps tap
+brew tap rusty-ferris-club/tap # Needed for shellclear
+
 # Define an array of packages to install using Homebrew.
 packages=(
     "bash"
@@ -34,9 +37,11 @@ packages=(
     "git"
     "tree"
     "node"
+    "terraform"
     "neovim"
     "tmux"
     "rsync"
+    "typescript"
 
     # disk usage apps
     "ncdu"
@@ -78,6 +83,15 @@ packages=(
 
     # Improved shell history
     "atuin"
+
+    # Fuzzy find files
+    "fzf"
+
+    # Shell linter for sensitive info in commands
+    "shellclear"
+
+    # Safely delete files (trash)
+    "safe-rm"
 )
 
 # Loop over the array to install each application.
@@ -132,6 +146,7 @@ apps=(
     "docker"
     "google-cloud-sdk"
     "iterm2"
+    "microsoft-onenote"
 )
 
 # Loop over the array to install each application.
