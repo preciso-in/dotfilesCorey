@@ -26,6 +26,9 @@ done
 # Run the MacOS Script
 ./macOS.sh
 
+# Install Powerline Meslo fonts
+git clone https://github.com/powerline/fonts.git && cd fonts && ./install.sh
+
 # Run the Homebrew Script
 ./brew.sh
 
