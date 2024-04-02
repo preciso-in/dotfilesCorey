@@ -27,7 +27,8 @@ done
 ./macOS.sh
 
 # Install Powerline Meslo fonts
-git clone https://github.com/powerline/fonts.git && cd fonts && ./install.sh
+git clone https://github.com/powerline/fonts.git >/dev/null 2>&1
+cd fonts && ./install.sh
 
 cd $dotfiledir
 
