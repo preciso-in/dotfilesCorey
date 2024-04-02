@@ -11,7 +11,7 @@
 dotfiledir="${HOME}/dotfilesCorey"
 
 # list of files/folders to symlink in ${homedir}
-files=(zshrc zprofile zprompt bashrc bash_profile bash_prompt aliases private)
+files=(zshrc zprofile zprompt bashrc bash_profile bash_prompt aliases private functions)
 
 # change to the dotfiles directory
 echo "Changing to the ${dotfiledir} directory"
@@ -33,3 +33,7 @@ done
 ./vscode.sh
 
 echo "Installation Complete!"
+
+echo "\nRestart Computer for settings to take effect."
+
+echo "\nOpen Apps from LaunchPad for the first time. Spotlight will not show apps in Search until then."
