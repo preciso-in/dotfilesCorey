@@ -34,6 +34,6 @@ done
 
 echo "Installation Complete!"
 
-echo "\nRestart Computer for settings to take effect."
+echo "\nRestart Computer to apply changes."
 
-echo "\nOpen Apps from LaunchPad for the first time. Spotlight will not show apps in Search until then."
+echo "\nOpen apps from LaunchPad to add them to Spotlight."
