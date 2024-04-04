@@ -36,10 +36,10 @@ source ./brew_formulae.sh
 count=0
 for package in "${formulae[@]}"; do
     count=count+1
+    echo "\n\n\nInstalling $package... $count/${#formulae[@]}"
     if brew list --formula | grep -q "^$package\$"; then
         echo "$package is already installed. Skipping..."
     else
-        echo "\n\n\nInstalling $package... $count/${#formulae[@]}"
         brew install "$package"
     fi
 done
