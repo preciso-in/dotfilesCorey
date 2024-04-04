@@ -33,7 +33,7 @@ cd fonts && ./install.sh
 cd $dotfiledir
 
 # Run the Homebrew Script
-./brew.sh
+./brew/brew.sh
 
 # Run VS Code Script
 ./vscode.sh
