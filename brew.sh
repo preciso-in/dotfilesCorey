@@ -30,8 +30,8 @@ brew cleanup
 # Rust apps tap
 brew tap rusty-ferris-club/tap # Needed for shellclear
 
-# Define an array of packages to install using Homebrew.
-packages=(
+# Define an array of formulae to install using Homebrew.
+formulae=(
     "bash"
     "zsh"
     "git"
@@ -92,10 +92,13 @@ packages=(
 
     # Safely delete files (trash)
     "safe-rm"
+
+    # Help for command line tools
+    "tldr"
 )
 
 # Loop over the array to install each application.
-for package in "${packages[@]}"; do
+for package in "${formulae[@]}"; do
     if brew list --formula | grep -q "^$package\$"; then
         echo "$package is already installed. Skipping..."
     else
@@ -122,35 +125,40 @@ read git_user_email
 $(brew --prefix)/bin/git config --global user.name "$git_user_name"
 $(brew --prefix)/bin/git config --global user.email "$git_user_email"
 
-# Create the tutorial virtual environment I use frequently
-$(brew --prefix)/bin/python3 -m venv "${HOME}/tutorial"
-
 # Install Prettier, which I use in both VS Code and Sublime Text
 $(brew --prefix)/bin/npm install --global prettier
 
 # Define an array of applications to install using Homebrew Cask.
-apps=(
+cask_apps=(
+    # Browsers
     "google-chrome"
     "firefox"
     "arc"
     "opera"
-    "visual-studio-code"
-    "vlc"
-    "postman"
-    "anki"
+
+    # Terminals / SDKs / IDEs
     "warp"
+    "google-cloud-sdk"
+    "sourcetree"
+    "visual-studio-code"
+    "iterm2"
+    "postman"
+
+    # Media
+    "vlc"
+    "anki"
+    "obsidian"
+    "microsoft-onenote"
     "whatsapp"
     "microsoft-remote-desktop"
-    "obsidian"
-    "sourcetree"
+
+    # Virtualisation
+    "utm"
     "docker"
-    "google-cloud-sdk"
-    "iterm2"
-    "microsoft-onenote"
 )
 
 # Loop over the array to install each application.
-for app in "${apps[@]}"; do
+for app in "${cask_apps[@]}"; do
     if brew list --cask | grep -q "^$app\$"; then
         echo "$app is already installed. Skipping..."
     else

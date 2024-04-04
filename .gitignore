@@ -16,3 +16,5 @@ Thumbs.db
 # Private Information
 .private
 .gitconfig
+
+node_modules
