@@ -30,72 +30,7 @@ brew cleanup
 # Rust apps tap
 brew tap rusty-ferris-club/tap # Needed for shellclear
 
-# Define an array of formulae to install using Homebrew.
-formulae=(
-    "bash"
-    "zsh"
-    "git"
-    "tree"
-    "node"
-    "terraform"
-    "neovim"
-    "tmux"
-    "rsync"
-    "typescript"
-
-    # disk usage apps
-    "ncdu"
-    "dust"
-
-    # notify from command line
-    "ntfy"
-
-    # Extremely fast tool to remove dupes and other lint from your filesystem
-    "rmlint"
-
-    # Programmatically correct mistyped console commands
-    "thefuck"
-
-    # Simple, fast and user-friendly alternative to find
-    "fd"
-
-    # User-friendly cURL replacement (command-line HTTP client)
-    "httpie"
-
-    # JavaScript toolchain manager for reproducible environments
-    "volta"
-
-    # A simple terminal UI for both docker and docker-compose
-    "lazydocker"
-
-    # Better ls
-    "eza"
-
-    # Better cat
-    "bat"
-
-    # Run command when file changes
-    "entr"
-
-    # midnight commander - file manager
-    # https://www.youtube.com/watch?v=fJOkuaihAek
-    "midnight-commander"
-
-    # Improved shell history
-    "atuin"
-
-    # Fuzzy find files
-    "fzf"
-
-    # Shell linter for sensitive info in commands
-    "shellclear"
-
-    # Safely delete files (trash)
-    "safe-rm"
-
-    # Help for command line tools
-    "tldr"
-)
+source ./brew_formulae.sh
 
 # Loop over the array to install each application.
 for package in "${formulae[@]}"; do
@@ -106,6 +41,8 @@ for package in "${formulae[@]}"; do
         brew install "$package"
     fi
 done
+
+unset formulae
 
 # Add the Homebrew zsh to allowed shells
 echo "Changing default shell to Homebrew zsh"
@@ -128,34 +65,7 @@ $(brew --prefix)/bin/git config --global user.email "$git_user_email"
 # Install Prettier, which I use in both VS Code and Sublime Text
 $(brew --prefix)/bin/npm install --global prettier
 
-# Define an array of applications to install using Homebrew Cask.
-cask_apps=(
-    # Browsers
-    "google-chrome"
-    "firefox"
-    "arc"
-    "opera"
-
-    # Terminals / SDKs / IDEs
-    "warp"
-    "google-cloud-sdk"
-    "sourcetree"
-    "visual-studio-code"
-    "iterm2"
-    "postman"
-
-    # Media
-    "vlc"
-    "anki"
-    "obsidian"
-    "microsoft-onenote"
-    "whatsapp"
-    "microsoft-remote-desktop"
-
-    # Virtualisation
-    "utm"
-    "docker"
-)
+source ./brew_casks.sh
 
 # Loop over the array to install each application.
 for app in "${cask_apps[@]}"; do
@@ -166,6 +76,7 @@ for app in "${cask_apps[@]}"; do
         brew install --cask "$app"
     fi
 done
+unset cask_apps
 
 # Update and clean up again for safe measure
 brew update
