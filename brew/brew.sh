@@ -74,10 +74,10 @@ source ./brew_casks.sh
 count=0
 for app in "${cask_apps[@]}"; do
     count=count+1
+    echo "\n\n\nInstalling $app... $count/${#formulae[@]}"
     if brew list --cask | grep -q "^$app\$"; then
         echo "$app is already installed. Skipping..."
     else
-        echo "\n\n\nInstalling $app... $count/${#formulae[@]}"
         brew install --cask "$app"
     fi
 done
