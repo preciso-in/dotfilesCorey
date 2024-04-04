@@ -35,7 +35,7 @@ source ./brew_formulae.sh
 # Loop over the array to install each application.
 count=0
 for package in "${formulae[@]}"; do
-    count=count+1
+    count=$((count + 1))
     echo "\n\n\nInstalling $package... $count/${#formulae[@]}"
     if brew list --formula | grep -q "^$package\$"; then
         echo "$package is already installed. Skipping..."
@@ -73,7 +73,7 @@ source ./brew_casks.sh
 # Loop over the array to install each application.
 count=0
 for app in "${cask_apps[@]}"; do
-    count=count+1
+    count=$((count + 1))
     echo "\n\n\nInstalling $app... $count/${#formulae[@]}"
     if brew list --cask | grep -q "^$app\$"; then
         echo "$app is already installed. Skipping..."
