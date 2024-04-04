@@ -33,14 +33,17 @@ brew tap rusty-ferris-club/tap # Needed for shellclear
 source ./brew_formulae.sh
 
 # Loop over the array to install each application.
+count=0
 for package in "${formulae[@]}"; do
+    count=count+1
     if brew list --formula | grep -q "^$package\$"; then
         echo "$package is already installed. Skipping..."
     else
-        echo "Installing $package..."
+        echo "\n\n\nInstalling $package... $count/${#formulae[@]}"
         brew install "$package"
     fi
 done
+unset count
 
 unset formulae
 
@@ -68,14 +71,17 @@ $(brew --prefix)/bin/npm install --global prettier
 source ./brew_casks.sh
 
 # Loop over the array to install each application.
+count=0
 for app in "${cask_apps[@]}"; do
+    count=count+1
     if brew list --cask | grep -q "^$app\$"; then
         echo "$app is already installed. Skipping..."
     else
-        echo "Installing $app..."
+        echo "\n\n\nInstalling $app... $count/${#formulae[@]}"
         brew install --cask "$app"
     fi
 done
+unset count
 unset cask_apps
 
 # Update and clean up again for safe measure
