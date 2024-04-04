@@ -34,7 +34,7 @@ cd $dotfiledir
 
 # Run the Homebrew Script
 pushd brew
-./brew/brew.sh
+./brew.sh
 popd
 
 # Run VS Code Script

@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Define an array of formulae to install using Homebrew.
 formulae=(
     "bash"

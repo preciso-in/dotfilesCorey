@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Define an array of applications to install using Homebrew Cask.
 cask_apps=(
     # Browsers
