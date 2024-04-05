@@ -14,21 +14,18 @@
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "always"
+  "vim.insertModeKeyBindings": [
+    {
+      //exit insert mode
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+    {
+      //exit insert mode
+      "before": ["J", "K"],
+      "after": ["<Esc>"]
     }
-  },
-  "pylint.args": ["--disable=C0114,C0115,C0116"],
-  "code-runner.clearPreviousOutput": true,
-  "code-runner.showExecutionMessage": false,
-  "code-runner.ignoreSelection": true,
-  "code-runner.saveFileBeforeRun": true,
-  "code-runner.executorMap": {
-    "python": "\"$pythonPath\" -u $fullFileName"
-  },
+  ],
   "[plaintext]": {
     "editor.quickSuggestions": {
       "comments": "off",
@@ -44,5 +41,11 @@
   "workbench.settings.openDefaultSettings": true,
   "workbench.settings.useSplitJSON": false,
   "workbench.settings.editor": "json",
-  "workbench.startupEditor": "newUntitledFile"
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.lineNumbers": "relative",
+  "workbench.settings.applyToAllProfiles": ["editor.lineNumbers"],
+  "vim.smartRelativeLine": true,
+  "workbench.editor.empty.hint": "hidden",
+  "editor.wordWrap": "on",
+  "files.autoSave": "onFocusChange"
 }
