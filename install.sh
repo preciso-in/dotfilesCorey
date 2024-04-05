@@ -43,6 +43,11 @@ popd
 # Run VS Code Script
 ./vscode.sh
 
+# Run Anki Addons Script
+./settings/anki_addons.sh
+printf "\nPress enter to continue\n"
+read
+
 echo "Installation Complete!"
 
 echo "\nRestart Computer to apply changes."
