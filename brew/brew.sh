@@ -35,11 +35,12 @@ source ./brew_formulae.sh
 count=0
 for package in "${formulae[@]}"; do
     count=$((count + 1))
-    echo "\n\n\nInstalling $package... $count/${#formulae[@]}"
+    echo "\nInstalling $package... $count/${#formulae[@]}"
     if brew list --formula | grep -q "^$package\$"; then
-        echo "$package is already installed. Skipping..."
+        echo "$package is already installed. Skipping...\n"
     else
         brew install "$package"
+        echo "\n"
     fi
 done
 unset count
@@ -73,11 +74,12 @@ source ./brew_casks.sh
 count=0
 for app in "${cask_apps[@]}"; do
     count=$((count + 1))
-    echo "\n\n\nInstalling $app... $count/${#cask_apps[@]}"
+    echo "\nInstalling $app... $count/${#cask_apps[@]}"
     if brew list --cask | grep -q "^$app\$"; then
-        echo "$app is already installed. Skipping..."
+        echo "$app is already installed. Skipping...\n"
     else
         brew install --cask "$app"
+        echo "\n"
     fi
 done
 unset count

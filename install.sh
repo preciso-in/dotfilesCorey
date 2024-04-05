@@ -46,7 +46,7 @@ popd
 # Run Anki Addons Script
 sudo chmod u+x ./settings/anki_addons.sh
 ./settings/anki_addons.sh
-printf "\nPress enter to continue\n"
+printf "Press enter to continue"
 read
 
 echo "Installation Complete!"

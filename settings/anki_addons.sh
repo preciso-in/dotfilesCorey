@@ -20,5 +20,3 @@ list_addOns=(
 
 echo "Add following addons in Anki"
 echo $list_addOns
-
-echo "\n\n\n"
