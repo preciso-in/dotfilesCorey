@@ -65,4 +65,11 @@ formulae=(
 
     # Help for command line tools
     "tldr"
+
+    # Hashicorp Vault
+    "hashicorp/tap/vault"
+
+    # Better `ps`
+    # https://www.youtube.com/watch?v=GBem9cpe7GM
+    "procs"
 )

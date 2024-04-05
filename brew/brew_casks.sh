@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+brew tap hashicorp/tap
+
 # Define an array of applications to install using Homebrew Cask.
 cask_apps=(
     # Browsers

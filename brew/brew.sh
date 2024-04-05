@@ -27,8 +27,7 @@ brew upgrade
 brew upgrade --cask
 brew cleanup
 
-# Rust apps tap
-brew tap rusty-ferris-club/tap # Needed for shellclear
+./brew_taps.sh
 
 source ./brew_formulae.sh
 
