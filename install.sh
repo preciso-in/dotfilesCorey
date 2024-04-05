@@ -44,6 +44,7 @@ popd
 ./vscode.sh
 
 # Run Anki Addons Script
+sudo chmod u+x ./settings/anki_addons.sh
 ./settings/anki_addons.sh
 printf "\nPress enter to continue\n"
 read
