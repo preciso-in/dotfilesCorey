@@ -1,21 +1,23 @@
 #!/usr/bin/env zsh
-############################
-# This script creates symlinks from the home directory to any desired dotfiles in $HOME/dotfiles
-# And also installs MacOS Software
-# And also installs Homebrew Packages and Casks (Apps)
-# And also sets up VS Code
-# And also sets up Sublime Text
-############################
+
+############################################################################################
+############################################################################################
+#                                                                                          #
+# This script                                                                              #
+#   - creates symlinks from the home directory to any desired dotfiles in $HOME/dotfiles   #
+#   - installs MacOS Dev Software & configurations                                         #
+#   - installs Homebrew Packages and Casks (Apps)                                          #
+#   - sets up VS Code                                                                      #
+#                                                                                          #
+############################################################################################
+############################################################################################
 
 # dotfiles directory
-dotfiledir="${HOME}/dotfilesCorey"
+dotfiledir=$(pwd)
 
 # list of files/folders to symlink in ${homedir}
-files=(zshrc zprofile zprompt bashrc bash_profile bash_prompt aliases private functions)
-
-# change to the dotfiles directory
-echo "Changing to the ${dotfiledir} directory"
-cd "${dotfiledir}" || exit
+# files=(zshrc zprofile zprompt bashrc bash_profile bash_prompt aliases private functions)
+files=(zshrc aliases functions)
 
 # create symlinks (will overwrite old dotfiles)
 for file in "${files[@]}"; do
@@ -28,12 +30,13 @@ done
 
 # Install Powerline Meslo fonts
 git clone https://github.com/powerline/fonts.git >/dev/null 2>&1
-cd fonts && ./install.sh
-
-cd $dotfiledir
+pushd fonts # Change working directory to fonts
+./install.sh
+popd # Working directory reverts to dotfiles directory
+rm -rf fonts
 
 # Run the Homebrew Script
-pushd brew
+pushd brew # Change working directory to brew
 ./brew.sh
 popd
 

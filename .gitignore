@@ -18,3 +18,9 @@ Thumbs.db
 .gitconfig
 
 node_modules
+
+# Test files
+*test*.*
+test
+
+fonts
