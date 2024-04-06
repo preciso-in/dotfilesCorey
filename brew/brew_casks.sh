@@ -22,11 +22,13 @@ cask_apps=(
     "vlc"
     "anki"
     "obsidian"
-    "microsoft-onenote"
     "whatsapp"
-    "microsoft-remote-desktop"
 
     # Virtualisation
     "utm"
     "docker"
+
+    # Needs Password
+    "microsoft-onenote"
+    "microsoft-remote-desktop"
 )
