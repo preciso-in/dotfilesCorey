@@ -1,45 +1,21 @@
 [
   {
-    "key": "shift+cmd+k",
-    "command": "workbench.action.toggleSidebarVisibility"
+    "key": "shift+enter",
+    "command": "extension.vim_escape",
+    "when": "editorTextFocus"
   },
   {
-    "key": "escape",
-    "command": "workbench.action.output.toggleOutput",
-    "when": "inOutput"
-  },
-  {
-    "key": "cmd+y",
-    "command": "redo",
+    "key": "ctrl+y",
+    "command": "editor.action.deleteLines",
     "when": "textInputFocus && !editorReadonly"
   },
   {
-    "key": "cmd+y",
-    "command": "editor.action.webvieweditor.redo",
-    "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'"
+    "key": "cmd+g cmd+s",
+    "command": "git.stageSelectedRanges"
   },
   {
-    "key": "shift+cmd+z",
-    "command": "workbench.action.toggleZenMode"
-  },
-  {
-    "key": "shift+cmd+z",
-    "command": "workbench.action.exitZenMode",
-    "when": "inZenMode"
-  },
-  {
-    "key": "escape escape",
-    "command": "-workbench.action.exitZenMode",
-    "when": "inZenMode"
-  },
-  {
-    "key": "ctrl+cmd+down",
-    "command": "editor.action.moveLinesDownAction",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+cmd+up",
-    "command": "editor.action.moveLinesUpAction",
-    "when": "editorTextFocus && !editorReadonly"
+    "key": "alt+;",
+    "command": "extension.jumpy-word",
+    "when": "editorTextFocus"
   }
 ]
