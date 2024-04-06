@@ -16,6 +16,7 @@ list_addOns=(
     "1508357010"
     "1046608507"
     "613684242"
+    "699175524"
 )
 
 echo "Add following addons in Anki"
