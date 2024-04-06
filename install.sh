@@ -4,10 +4,10 @@
 ############################################################################################
 #                                                                                          #
 # This script                                                                              #
-#   - creates symlinks from the home directory to any desired dotfiles in $HOME/dotfiles   #
-#   - installs MacOS Dev Software & configurations                                         #
-#   - installs Homebrew Packages and Casks (Apps)                                          #
-#   - sets up VS Code                                                                      #
+#   - Creates Symlinks from the home directory to any desired dotfiles in $HOME/dotfiles   #
+#   - Installs MacOS Dev Software & configurations                                         #
+#   - Installs Homebrew Packages and Casks (Apps)                                          #
+#   - Sets up VS Code                                                                      #
 #                                                                                          #
 ############################################################################################
 ############################################################################################
