@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+# Set nvim as default editor for all edits in Terminal
+export EDITOR='nvim'
+
+# Set terminal history settings
+# Exclude duplicate commands from history
+# Exclude commands that start with a space i.e for commands containing secrets
+export HISTCONTROL=ignoredups:erasedups:ignorespace
