@@ -44,8 +44,9 @@ for package in "${formulae[@]}"; do
     fi
 done
 unset count
-
 unset formulae
+
+echo "\n\nInstalled brew formulae\n\n"
 
 # Add the Homebrew zsh to allowed shells
 echo "Changing default shell to Homebrew zsh"
