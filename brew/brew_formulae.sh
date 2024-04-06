@@ -4,6 +4,7 @@
 formulae=(
     "bash"
     "zsh"
+    "git"
     "tree"
     "node"
     "terraform"
