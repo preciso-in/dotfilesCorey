@@ -48,10 +48,6 @@ unset formulae
 
 echo "\n\nInstalled brew formulae\n\n"
 
-# Set my git credentials
-$(brew --prefix)/bin/git config --global user.name "$git_user_name"
-$(brew --prefix)/bin/git config --global user.email "$git_user_email"
-
 # Install Prettier, which I use in both VS Code and Sublime Text
 $(brew --prefix)/bin/npm install --global prettier
 
