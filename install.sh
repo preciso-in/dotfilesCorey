@@ -48,11 +48,11 @@ popd
 # Run Anki Addons Script
 sudo chmod u+x ./settings/anki_addons.sh
 ./settings/anki_addons.sh
-printf "Press enter to continue"
+printf "Press ENTER to continue"
 read
 
 # Add the Homebrew zsh to allowed shells
-echo "Changing default shell to Homebrew zsh"
+echo "\nChanging default shell to Homebrew zsh"
 echo "$(brew --prefix)/bin/zsh" | sudo tee -a /etc/shells >/dev/null
 # Set the Homebrew zsh as default shell
 chsh -s "$(brew --prefix)/bin/zsh"
