@@ -58,7 +58,7 @@ echo "$(brew --prefix)/bin/zsh" | sudo tee -a /etc/shells >/dev/null
 chsh -s "$(brew --prefix)/bin/zsh"
 
 # Setup git on computer
-./git-setup.sh
+source ./git-setup.sh
 
 echo "Installation Complete!"
 
