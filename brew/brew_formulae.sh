@@ -5,6 +5,7 @@ formulae=(
     "bash"
     "zsh"
     "git"
+    "ripgrep"
     "tree"
     "node"
     "terraform"
