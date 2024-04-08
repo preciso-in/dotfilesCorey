@@ -76,4 +76,8 @@ formulae=(
 
     # docker image browser
     "dive"
+
+    # smart most used directory tracker
+    # type "j" and then a small part of the directory path
+    "autojump"
 )
