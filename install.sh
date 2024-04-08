@@ -46,10 +46,7 @@ popd
 ./vscode.sh
 
 # Run Anki Addons Script
-sudo chmod u+x ./settings/anki_addons.sh
-./settings/anki_addons.sh
-printf "Press ENTER to continue"
-read
+source ./settings/anki_addons.sh
 
 # List Browser extensions
 source ./settings/browser_extensions.sh
