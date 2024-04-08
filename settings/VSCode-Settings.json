@@ -45,7 +45,6 @@
   "editor.wordWrap": "on",
   "workbench.colorTheme": "Dark Modern",
   "workbench.iconTheme": "ayu",
-
   "debug.console.fontFamily": "Source Code Pro",
   "editor.fontWeight": "500",
   "terminal.integrated.fontWeight": "600",
@@ -59,12 +58,22 @@
   },
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "k"],
-      "after": ["<Esc>"]
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     },
     {
-      "before": ["J", "K"],
-      "after": ["<Esc>"]
+      "before": [
+        "J",
+        "K"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     }
   ],
   "editor.quickSuggestionsDelay": 100,
@@ -77,8 +86,14 @@
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "newUntitledFile",
   "editor.lineNumbers": "relative",
-  "workbench.settings.applyToAllProfiles": ["editor.lineNumbers"],
+  "workbench.settings.applyToAllProfiles": [
+    "editor.lineNumbers"
+  ],
   "vim.smartRelativeLine": true,
   "workbench.editor.empty.hint": "hidden",
-  "files.autoSave": "onFocusChange"
+  "files.autoSave": "onFocusChange",
+  "editor.suggest.shareSuggestSelections": true,
+  "window.newWindowDimensions": "maximized",
+  "window.openFoldersInNewWindow": "on",
+  "window.openFilesInNewWindow": "on"
 }

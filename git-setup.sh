@@ -1,5 +1,5 @@
 # Git config name
-echo "Please enter your FULL NAME for Git configuration:"
+echo "\n\nPlease enter your FULL NAME for Git configuration:"
 read git_user_name
 
 # Git config email
