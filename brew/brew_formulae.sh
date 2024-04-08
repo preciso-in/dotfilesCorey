@@ -73,4 +73,7 @@ formulae=(
     # Better `ps`
     # https://www.youtube.com/watch?v=GBem9cpe7GM
     "procs"
+
+    # docker image browser
+    "dive"
 )
