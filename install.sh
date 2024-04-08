@@ -51,6 +51,9 @@ sudo chmod u+x ./settings/anki_addons.sh
 printf "Press ENTER to continue"
 read
 
+# List Browser extensions
+source ./settings/browser_extensions.sh
+
 # Add the Homebrew zsh to allowed shells
 echo "\nChanging default shell to Homebrew zsh"
 echo "$(brew --prefix)/bin/zsh" | sudo tee -a /etc/shells >/dev/null
