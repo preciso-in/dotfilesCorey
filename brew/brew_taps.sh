@@ -19,3 +19,14 @@ else
     echo "Installing $font_name..."
     brew install --cask "$font_name"
 fi
+
+# Define the font name
+font_name="font-fira-code"
+
+# Check if the font is already installed
+if brew list --cask | grep -q "^$font_name\$"; then
+    echo "$font_name is already installed. Skipping..."
+else
+    echo "Installing $font_name..."
+    brew install --cask "$font_name"
+fi
