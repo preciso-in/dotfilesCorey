@@ -1,5 +1,5 @@
 # atuin remapping for "ctrl + r" and "up arrow"
-eval "$(atuin init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
 
 # Add fzf key bindings to shell
 # https://github.com/junegunn/fzf?tab=readme-ov-file#key-bindings-for-command-line
@@ -7,3 +7,6 @@ eval "$(fzf --zsh)"
 
 # Add fuck to shell
 eval $(thefuck --alias)
+
+# Add autojump to shell
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
