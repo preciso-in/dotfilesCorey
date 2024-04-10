@@ -80,4 +80,11 @@ formulae=(
     # smart most used directory tracker
     # type "j" and then a small part of the directory path
     "autojump"
+
+    # Replacement of Make
+    "just"
+
+    # Unprotect pdfs
+    # qpdf --decrypt --password=12345 encryptedfile.pdf output_file.pdf
+    "qpdf"
 )
