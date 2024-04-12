@@ -87,4 +87,7 @@ formulae=(
     # Unprotect pdfs
     # qpdf --decrypt --password=12345 encryptedfile.pdf output_file.pdf
     "qpdf"
+
+    # Install Ansible
+    "ansible"
 )
