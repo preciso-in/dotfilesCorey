@@ -28,6 +28,7 @@ extensions=(
     gruntfuggly.todo-tree
     vscodevim.vim
     jeremyljackson.vs-docblock
+    lucax88x.codeacejumper
 )
 
 # Get a list of all currently installed extensions.

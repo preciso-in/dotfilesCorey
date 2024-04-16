@@ -14,16 +14,16 @@
     "command": "git.stageSelectedRanges"
   },
   {
-    "key": "alt+;",
-    "command": "extension.jumpy-word",
-    "when": "editorTextFocus"
-  },
-  {
     "key": "cmd+=",
     "command": "extension.customWindowZoomIn"
   },
   {
     "key": "cmd+-",
     "command": "extension.customWindowZoomOut"
+  },
+  {
+    "key": "alt+;",
+    "command": "extension.jumpy-word",
+    "when": "editorTextFocus"
   }
 ]
