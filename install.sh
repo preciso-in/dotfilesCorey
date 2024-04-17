@@ -26,7 +26,9 @@ for file in "${files[@]}"; do
 done
 
 # Run the MacOS Script
+pushd scripts
 ./macOS.sh
+popd
 
 # Install Powerline Meslo fonts
 echo "\n Installing Powerline fonts"
@@ -43,7 +45,9 @@ pushd brew # Change working directory to brew
 popd
 
 # Run VS Code Script
+pushd scripts
 ./vscode.sh
+popd
 
 # Run Anki Addons Script
 source ./settings/anki_addons.sh
@@ -58,7 +62,9 @@ echo "$(brew --prefix)/bin/zsh" | sudo tee -a /etc/shells >/dev/null
 chsh -s "$(brew --prefix)/bin/zsh"
 
 # Setup git on computer
+pushd scripts
 source ./git-setup.sh
+popd
 
 echo "Installation Complete!"
 
