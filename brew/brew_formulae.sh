@@ -90,4 +90,9 @@ formulae=(
 
     # Install Ansible
     "ansible"
+
+    # Install mac desktop manager
+    "koekeishiya/formulae/yabai"
+    "yabai"
+    "skhd"
 )

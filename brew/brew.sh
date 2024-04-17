@@ -27,7 +27,7 @@ brew upgrade
 brew upgrade --cask
 brew cleanup
 
-./brew_taps.sh
+source ./brew_taps.sh
 
 source ./brew_formulae.sh
 
@@ -67,6 +67,9 @@ for app in "${cask_apps[@]}"; do
 done
 unset count
 unset cask_apps
+
+# Finish installations
+source ./brew_finish_installation.sh
 
 # Update and clean up again for safe measure
 brew update
