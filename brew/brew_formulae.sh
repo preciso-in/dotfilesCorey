@@ -13,6 +13,7 @@ formulae=(
     "tmux"
     "rsync"
     "typescript"
+    "jq"
 
     # disk usage apps
     "ncdu"
