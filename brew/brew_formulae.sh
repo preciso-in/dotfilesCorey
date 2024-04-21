@@ -97,7 +97,6 @@ formulae=(
 
 # Notes
 
+# ShellClear - Removed
 # Shell linter for sensitive info in commands
-# shellclear does not work for me because of atuin.
-# atuin does not store history in local history file.
-# "shellclear"
+# shellclear is incompatible with atuin.  atuin does not store history in local history file.
