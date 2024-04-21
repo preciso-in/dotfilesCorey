@@ -59,9 +59,6 @@ formulae=(
     # Fuzzy find files
     "fzf"
 
-    # Shell linter for sensitive info in commands
-    "shellclear"
-
     # Safely delete files (trash)
     "safe-rm"
 
@@ -97,3 +94,10 @@ formulae=(
     "yabai"
     "skhd"
 )
+
+# Notes
+
+# Shell linter for sensitive info in commands
+# shellclear does not work for me because of atuin.
+# atuin does not store history in local history file.
+# "shellclear"
