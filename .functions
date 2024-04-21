@@ -11,8 +11,8 @@ function listFunctions() {
   echo "open_sites"
 }
 
-chmod +x ${HOME}/dotfilesCorey/bash_scripts/count-gcloud-instances.sh
-chmod +x ${HOME}/dotfilesCorey/bash_scripts/list-fzf-commands.sh
+chmod +x ${HOME}/dotfilesCorey/scripts/count-gcloud-instances.sh
+chmod +x ${HOME}/dotfilesCorey/scripts/list-fzf-commands.sh
 
 function precmd() {
   print $'\n'
