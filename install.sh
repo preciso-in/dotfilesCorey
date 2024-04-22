@@ -25,6 +25,8 @@ for file in "${files[@]}"; do
     ln -sf "${dotfiledir}/.${file}" "${HOME}/.${file}"
 done
 
+exit
+
 # Run the MacOS Script
 pushd scripts
 ./macOS.sh
