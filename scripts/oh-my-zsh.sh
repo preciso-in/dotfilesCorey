@@ -11,4 +11,4 @@ popd
 
 echo $PWD
 
-ln -sf $PWD/git_repos/ohmyzsh $HOME/.oh-my-zsh
+ln -sf "$(dirname $PWD)/git_repos/ohmyzsh" $HOME/.oh-my-zsh
