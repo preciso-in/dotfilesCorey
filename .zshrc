@@ -13,7 +13,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 # OhMyZsh Plugins
-plugins=(git)
+plugins=(aliases git command-not-found docker-compose gcloud gh systemd terraform thefuck volta)
 source $ZSH/oh-my-zsh.sh
 
 # atuin & fzf
