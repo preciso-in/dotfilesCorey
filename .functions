@@ -11,7 +11,7 @@ function listFunctions() {
   echo "open_sites"
 }
 
-chmod +x ${HOME}/dotfilesCorey/scripts/count-gcloud-instances.sh
+chmod +x ${PWD}/scripts/count-gcloud-instances.sh
 
 function precmd() {
   print $'\n'
@@ -39,7 +39,7 @@ function cdf() {
 }
 
 function count_gcloud_instances() {
-  ~/dotfilesCorey/bash_scripts/count-gcloud-instances.sh
+  $PWD/scripts/count-gcloud-instances.sh
 }
 
 function chrome() {
