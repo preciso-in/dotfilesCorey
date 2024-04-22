@@ -25,9 +25,11 @@ for file in "${files[@]}"; do
     ln -sf "${dotfiledir}/.${file}" "${HOME}/.${file}"
 done
 
-# Run the MacOS Script
 pushd scripts
-./macOS.sh
+# Install OhMyZsh
+source ./oh-my-zsh.sh
+# Run the MacOS Script
+source ./macOS.sh
 popd
 
 # Install Powerline Meslo fonts
