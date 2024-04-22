@@ -26,6 +26,7 @@ for file in "${files[@]}"; do
     ln -sf "${dotfiledir}/.${file}" "${HOME}/.${file}"
 done
 
+source ./oh-my-zsh.sh
 exit
 
 # Run the MacOS Script
