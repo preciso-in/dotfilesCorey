@@ -19,3 +19,6 @@ source $ZSH/oh-my-zsh.sh
 # atuin & fzf
 # OhMyZsh overrides plugins if not placed here
 source .plugins
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/vault vault
