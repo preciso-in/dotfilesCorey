@@ -17,7 +17,8 @@ dotfiledir=$(pwd)
 
 # list of files/folders to symlink in ${homedir}
 # files=(zshrc zprofile zprompt bashrc bash_profile bash_prompt aliases private functions)
-files=(zshrc zprofile aliases functions envt_vars plugins)
+# files=(zshrc zprofile aliases functions envt_vars plugins)
+files=(zshrc zprofile functions envt_vars)
 
 # create symlinks (will overwrite old dotfiles)
 for file in "${files[@]}"; do
