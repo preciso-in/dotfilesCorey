@@ -63,9 +63,11 @@ echo "$(brew --prefix)/bin/zsh" | sudo tee -a /etc/shells >/dev/null
 # Set the Homebrew zsh as default shell
 chsh -s "$(brew --prefix)/bin/zsh"
 
-# Setup git on computer
 pushd scripts
+# Setup git on computer
 source ./git-setup.sh
+# Tidy up installations (vault...)
+source ./tidy-up.sh
 popd
 
 echo "Installation Complete!"
