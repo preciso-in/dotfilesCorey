@@ -12,7 +12,6 @@ function listFunctions() {
 }
 
 chmod +x ${HOME}/dotfilesCorey/scripts/count-gcloud-instances.sh
-chmod +x ${HOME}/dotfilesCorey/scripts/list-fzf-commands.sh
 
 function precmd() {
   print $'\n'
@@ -41,14 +40,6 @@ function cdf() {
 
 function count_gcloud_instances() {
   ~/dotfilesCorey/bash_scripts/count-gcloud-instances.sh
-}
-
-function list_fzf_commands() {
-  ~/dotfilesCorey/bash_scripts/list-fzf-commands.sh
-}
-
-function open_sites() {
-  ~/dotfilesCorey/bash_scripts/open_sites.sh
 }
 
 function chrome() {

@@ -11,5 +11,7 @@ source .oh-my-zsh/oh-my-zsh.sh
 
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="agnoster"
+
+# OhMyZsh Plugins
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
