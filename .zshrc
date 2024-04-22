@@ -7,7 +7,7 @@ for file in ~/.{zprofile,envt_vars}; do
 done
 unset file
 
-source ./scripts/oh-my-zsh.sh
+source .oh-my-zsh/oh-my-zsh.sh
 
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="agnoster"
