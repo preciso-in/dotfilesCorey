@@ -1,5 +1,10 @@
-mkdir git_repos
+DIRECTORY="git_repos"
 
-cd git_repos && git clone https://github.com/ohmyzsh/ohmyzsh.git
+if [ -d "$DIRECTORY" ]; then
+  rm -rf $DIRECTORY
+fi
+
+mkdir $DIRECTORY
+cd $DIRECTORY && git clone https://github.com/ohmyzsh/ohmyzsh.git
 
 cd $HOME && ln -sf $PWD/git_repos/oh-my-zsh .oh-my-zsh
