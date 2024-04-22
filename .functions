@@ -11,7 +11,9 @@ function listFunctions() {
   echo "open_sites"
 }
 
-chmod +x ${PWD}/scripts/count-gcloud-instances.sh
+SCRIPT_DIR_PARENT=$(dirname $(readlink -f "$0"))
+
+chmod +x ${SCRIPT_DIR_PARENT}/scripts/count-gcloud-instances.sh
 
 function precmd() {
   print $'\n'
