@@ -26,14 +26,14 @@ for file in "${files[@]}"; do
     ln -sf "${dotfiledir}/.${file}" "${HOME}/.${file}"
 done
 
-source ./oh-my-zsh.sh
-exit
-
-# Run the MacOS Script
 pushd scripts
-./macOS.sh
+# Install oh-my-zsh
+source ./oh-my-zsh.sh
+# Run the MacOS Script
+# ./macOS.sh
 popd
 
+exit
 # Install Powerline Meslo fonts
 echo "\n Installing Powerline fonts"
 git clone https://github.com/powerline/fonts.git >/dev/null 2>&1
