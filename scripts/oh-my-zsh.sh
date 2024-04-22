@@ -1,7 +1,3 @@
-pushd git_repos
-git clone https://github.com/ohmyzsh/ohmyzsh.git
-popd
+cd ../git_repos && git clone https://github.com/ohmyzsh/ohmyzsh.git
 
-pushd $HOME
-ln -s $PWD/git_repos/oh-my-zsh .oh-my-zsh
-popd
+cd $HOME && ln -s $PWD/git_repos/oh-my-zsh .oh-my-zsh
