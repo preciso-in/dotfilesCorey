@@ -9,6 +9,6 @@ fi
 git clone https://github.com/ohmyzsh/ohmyzsh.git
 popd
 
-echo "HOME: $HOME"
+echo $PWD
 
-ln -sf ../git_repos/ohmyzsh $HOME/.oh-my-zsh
+ln -sf $PWD/git_repos/ohmyzsh $HOME/.oh-my-zsh
