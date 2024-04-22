@@ -1,14 +1,14 @@
-DIRECTORY="git_repos"
-
-if [ -d "$DIRECTORY" ]; then
-  rm -rf $DIRECTORY
+if ! [ -d ../git_repos ]; then
+  mkdir ../git_repos
 fi
 
-mkdir $DIRECTORY
-cd $DIRECTORY && git clone https://github.com/ohmyzsh/ohmyzsh.git
-
-cd $HOME
-echo $PWD
-exit
-git_repos/oh-my-zsh .oh-my-zsh
+pushd ../git_repos
+if [ -d ohmyzsh ]; then
+  rm -rf ohmyzsh
+fi
+git clone https://github.com/ohmyzsh/ohmyzsh.git
 popd
+
+echo "HOME: $HOME"
+
+ln -sf ../git_repos/ohmyzsh $HOME/.oh-my-zsh
