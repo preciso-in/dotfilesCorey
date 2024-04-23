@@ -16,7 +16,7 @@
 dotfiledir=$(pwd)
 
 # list of files/folders to symlink in ${homedir}
-files=(zshrc aliases functions envt_vars plugins)
+files=(zshrc aliases prompt_timer functions envt_vars plugins)
 
 # create symlinks (will overwrite old dotfiles)
 for file in "${files[@]}"; do

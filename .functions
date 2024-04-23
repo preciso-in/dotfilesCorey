@@ -15,14 +15,6 @@ SCRIPT_DIR_PARENT=$(dirname $(readlink -f "$0"))
 
 chmod +x ${SCRIPT_DIR_PARENT}/scripts/count-gcloud-instances.sh
 
-function precmd() {
-  print $'\n'
-}
-
-function preexec() {
-  timer=${timer:-$SECONDS}
-}
-
 function touch2() { mkdir -p "$(dirname "$1")" && touch "$1"; }
 
 function mkcd() {
