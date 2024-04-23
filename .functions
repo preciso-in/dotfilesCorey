@@ -9,11 +9,12 @@ function listFunctions() {
   echo "list_fzf_commands"
   echo "chrome"
   echo "open_sites"
+  echo "chsh"
 }
 
 SCRIPT_DIR_PARENT=$(dirname $(readlink -f "$0"))
 
-chmod +x ${SCRIPT_DIR_PARENT}/scripts/count-gcloud-instances.sh
+chmod -R +x ${SCRIPT_DIR_PARENT}/scripts/
 
 function touch2() { mkdir -p "$(dirname "$1")" && touch "$1"; }
 
@@ -40,4 +41,8 @@ function chrome() {
   echo "hi"
   cd ~
   open -a "Google Chrome" "http://$1"
+}
+
+function chsh() {
+  $PWD/scripts/cheatsheet.sh
 }
