@@ -2,7 +2,7 @@ autoload -Uz colors && colors
 setopt PROMPT_SUBST
 
 # Load dotfiles:
-for file in ~/.{aliases,prompt_timer,functions,envt_vars}; do
+for file in ~/.{aliases,functions,envt_vars,prompt_timer}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
