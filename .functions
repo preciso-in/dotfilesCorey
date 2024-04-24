@@ -9,7 +9,7 @@ function listFunctions() {
   echo "list_fzf_commands"
   echo "chrome"
   echo "open_sites"
-  echo "chsh"
+  echo "chtsht"
 }
 
 SCRIPT_DIR_PARENT=$(dirname $(readlink -f "$0"))
@@ -43,6 +43,6 @@ function chrome() {
   open -a "Google Chrome" "http://$1"
 }
 
-function chsh() {
+function chtsht() {
   $PWD/scripts/cheatsheet.sh
 }
