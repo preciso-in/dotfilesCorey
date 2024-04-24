@@ -12,9 +12,9 @@ function listFunctions() {
   echo "chtsht"
 }
 
-SCRIPT_DIR_PARENT=$(dirname $(readlink -f "$0"))
+FUNCTIONS_DIR_PARENT=$(dirname $(readlink -f "$0"))
 
-chmod -R +x ${SCRIPT_DIR_PARENT}/scripts/
+chmod -R +x ${FUNCTIONS_DIR_PARENT}/scripts/
 
 function touch2() { mkdir -p "$(dirname "$1")" && touch "$1"; }
 
@@ -34,7 +34,7 @@ function cdf() {
 }
 
 function count_gcloud_instances() {
-  $PWD/scripts/count-gcloud-instances.sh
+  $FUNCTIONS_DIR_PARENT/scripts/count-gcloud-instances.sh
 }
 
 function chrome() {
@@ -44,5 +44,5 @@ function chrome() {
 }
 
 function chtsht() {
-  $PWD/scripts/cheatsheet.sh
+  $FUNCTIONS_DIR_PARENT/scripts/cheatsheet.sh
 }
