@@ -1,3 +1,6 @@
+# Install volta
+curl https://get.volta.sh | bash
+
 vault -autocomplete-install 2>/dev/null
 
 # Copy Yabai and skhd configs to .config

@@ -34,9 +34,6 @@ formulae=(
     # User-friendly cURL replacement (command-line HTTP client)
     "httpie"
 
-    # JavaScript toolchain manager for reproducible environments
-    "volta"
-
     # A simple terminal UI for both docker and docker-compose
     "lazydocker"
 
@@ -100,3 +97,8 @@ formulae=(
 # ShellClear - Removed
 # Shell linter for sensitive info in commands
 # shellclear is incompatible with atuin.  atuin does not store history in local history file.
+
+# Volta - Removed
+# Volta cannot be installed with brew.
+# brew.sh does not list volta.
+# Although `brew install volta` does not fail
