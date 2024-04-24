@@ -1,7 +1,7 @@
 #! /usr/bin/env zsh
 
 languages=$(echo "typescript javascript" | tr " " "\n")
-core_utils=$(echo "find xargs sed awk jq" | tr " " "\n")
+core_utils=$(echo "awk bash find jq git sed xargs" | tr " " "\n")
 selected=$(echo -e "$languages\n$core_utils" | fzf)
 echo "Query: "
 read query
