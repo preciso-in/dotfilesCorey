@@ -12,6 +12,8 @@
 ############################################################################################
 ############################################################################################
 
+test=$1
+
 # dotfiles directory
 dotfiledir=$(pwd)
 
@@ -42,12 +44,16 @@ echo "\n Finished installing Powerline fonts"
 
 # Run the Homebrew Script
 pushd brew # Change working directory to brew
-./brew.sh
+if ! [ $1 = "test" ]; then
+    ./brew.sh
+fi
 popd
 
 # Run VS Code Script
 pushd scripts
-./vscode.sh
+if ! [ $1 = "test" ]; then
+    ./vscode.sh
+fi
 popd
 
 # Run Anki Addons Script
@@ -74,3 +80,7 @@ echo "Installation Complete!"
 echo "\nRestart Computer to apply changes."
 
 echo "\nOpen apps from LaunchPad to add them to Spotlight."
+
+#TODO: Refactor Curl & Terminal installations
+#TODO: Refactor Display of configuration instructions into a new file
+#TODO: Refactor new script that Starts services.
