@@ -5,11 +5,11 @@ yabai -m config window_placement second_child
 
 
 # padding
-yabai -m config top_padding 3
-yabai -m config bottom_padding 3
-yabai -m config left_padding 3
-yabai -m config right_padding 3
-yabai -m config window_gap 3
+yabai -m config top_padding 5
+yabai -m config bottom_padding 5
+yabai -m config left_padding 5
+yabai -m config right_padding 5
+yabai -m config window_gap 5
 
 
 # mouse settings 
@@ -31,6 +31,7 @@ yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^UTM$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Anki$" manage=off
+yabai -m rule --add app="^Music$" manage=off
   
 
 # Notes
