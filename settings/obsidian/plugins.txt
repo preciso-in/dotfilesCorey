@@ -1,0 +1,6 @@
+1. Relative Line Numbers
+2. Advanced Tables
+3. Vimrc support
+4. tagFolder
+5. Better Word Count
+6. Paste URL into selection
