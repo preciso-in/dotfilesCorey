@@ -68,9 +68,6 @@ done
 unset count
 unset cask_apps
 
-# Finish installations
-source ./brew_finish_installation.sh
-
 # Update and clean up again for safe measure
 brew update
 brew upgrade
