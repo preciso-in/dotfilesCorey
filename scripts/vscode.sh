@@ -1,4 +1,6 @@
 #!/usr/bin/env zsh
+SCRIPT_DIR=$(dirname $(readlink -f "$0"))
+DOTFILES_DIR=$(dirname $SCRIPT_DIR)
 
 echo "\n\nInstalling VS Code extensions"
 
@@ -54,9 +56,9 @@ if [ -d "$VSCODE_USER_SETTINGS_DIR" ]; then
     cp "${VSCODE_USER_SETTINGS_DIR}/settings.json" "${VSCODE_USER_SETTINGS_DIR}/settings.json.backup"
     cp "${VSCODE_USER_SETTINGS_DIR}/keybindings.json" "${VSCODE_USER_SETTINGS_DIR}/keybindings.json.backup"
 
-    # Copy your custom settings.json and keybindings.json to the VS Code settings directory
-    cp "settings/VSCode-Settings.json" "${VSCODE_USER_SETTINGS_DIR}/settings.json"
-    cp "settings/VSCode-Keybindings.json" "${VSCODE_USER_SETTINGS_DIR}/keybindings.json"
+    # Symlinkn VSCode settings
+    ln -sf $DOTFILES_DIR/settings/VSCode-Settings.json $VSCODE_USER_SETTINGS_DIR/settings.json
+    ln -sf $DOTFILES_DIR/settings/VSCode-Keybindings.json $VSCODE_USER_SETTINGS_DIR/keybindings.json
 
     echo "VS Code settings and keybindings have been updated."
 else
@@ -68,3 +70,7 @@ code .
 echo "Login to extensions (Copilot, Grammarly, etc) within VS Code."
 echo "Press enter to continue..."
 read
+
+unset DOTFILES_DIR
+unset SCRIPT_DIR
+unset VSCODE_USER_SETTINGS_DIR
