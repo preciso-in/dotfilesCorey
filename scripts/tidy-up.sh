@@ -1,3 +1,6 @@
+SCRIPT_DIR=$(dirname $(readlink -f "$0"))
+DOTFILES_DIR=$(dirname $SCRIPT_DIR)
+
 # Install volta
 curl https://get.volta.sh | bash
 
@@ -7,11 +10,12 @@ vault -autocomplete-install 2>/dev/null
 if ! [ -d $HOME/.config ]; then
   mkdir $HOME/.config
 fi
-SCRIPT_DIR=$(dirname $(readlink -f "$0"))
-DOTFILES_FOLDER=$(dirname $SCRIPT_DIR)
-ln -sf $DOTFILES_FOLDER/settings/yabai $HOME/.config/yabai
-ln -sf $DOTFILES_FOLDER/settings/skhd $HOME/.config/skhd
+ln -sf $DOTFILES_DIR/settings/yabai $HOME/.config/yabai
+ln -sf $DOTFILES_DIR/settings/skhd $HOME/.config/skhd
 
 # Start yabai and skhd services
 yabai --start-service
 skhd --start-service
+
+unset DOTFILES_DIR
+unset SCRIPT_DIR
