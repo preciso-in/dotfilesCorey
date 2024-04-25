@@ -23,7 +23,6 @@
   },
   {
     "key": "alt+;",
-    "command": "extension.jumpy-word",
-    "when": "editorTextFocus"
+    "command": "extension.aceJump.multiChar"
   }
 ]

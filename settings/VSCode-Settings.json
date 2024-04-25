@@ -95,11 +95,15 @@
   "editor.suggest.shareSuggestSelections": true,
   "window.newWindowDimensions": "maximized",
   "window.openFoldersInNewWindow": "on",
-  "window.openFilesInNewWindow": "on",
+  "window.openFilesInNewWindow": "default",
   "customWindowZoom.zoomLevelChangeValue": 0.1,
   "editor.fontVariations": false,
   "scm.inputFontFamily": "editor",
   "scm.inputFontSize": 15,
   "terminal.integrated.fontWeightBold": "bold",
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "git.autofetch": true,
+  "files.associations": {
+    "**/.gitignore": "plaintext"
+  }
 }
