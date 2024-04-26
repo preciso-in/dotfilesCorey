@@ -23,28 +23,20 @@ pushd $DOTFILES_DIR/shell_config
 popd
 unset DOTFILES_DIR
 
+# Install Software using Brew, Curl, etc.
+pushd scripts
+./install-software.sh
+popd
+
 pushd scripts
 # Run the MacOS Script
 source ./macOS.sh
 popd
 
-# Install Powerline Meslo fonts
-echo "\n Installing Powerline fonts"
-git clone https://github.com/powerline/fonts.git >/dev/null 2>&1
-pushd fonts # Change working directory to fonts
-./install.sh
-popd # Working directory reverts to dotfiles directory
-rm -rf fonts
-echo "\n Finished installing Powerline fonts"
-
-# Run the Homebrew Script
-pushd brew # Change working directory to brew
-./brew.sh
-popd
-
-# Run VS Code Script
+# Create VSCode Symlinks
 pushd scripts
-./vscode.sh
+./vscode-symlinks.sh
+./vscode-instructions.sh
 popd
 
 # Run Anki Addons Script

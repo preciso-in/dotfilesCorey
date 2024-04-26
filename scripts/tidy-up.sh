@@ -2,11 +2,6 @@
 SCRIPT_DIR=$(dirname $(readlink -f "$0"))
 DOTFILES_DIR=$(dirname $SCRIPT_DIR)
 
-# Install volta
-curl https://get.volta.sh | bash
-
-vault -autocomplete-install 2>/dev/null
-
 # Symlink Yabai and skhd configs to .config
 if ! [ -d $HOME/.config ]; then
   mkdir -p $HOME/.config/{skhd,yabai}
