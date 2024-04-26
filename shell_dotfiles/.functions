@@ -1,4 +1,8 @@
 # #! /usr/bin/env zsh
+echo "In file .functions"
+
+FUNCTIONS_DIR=$(dirname $(readlink -f "$0"))
+DOTFILES_DIR=$(dirname $FUNCTIONS_DIR)
 
 # List all functions
 function listFunctions() {
@@ -12,9 +16,7 @@ function listFunctions() {
   echo "chtsht"
 }
 
-FUNCTIONS_DIR_PARENT=$(dirname $(readlink -f "$0"))
-
-chmod -R +x ${FUNCTIONS_DIR_PARENT}/scripts/
+chmod -R +x ${DOTFILES_DIR}/scripts/
 
 function touch2() { mkdir -p "$(dirname "$1")" && touch "$1"; }
 
@@ -34,7 +36,7 @@ function cdf() {
 }
 
 function count_gcloud_instances() {
-  $FUNCTIONS_DIR_PARENT/scripts/count-gcloud-instances.sh
+  $HOME/scripts/count-gcloud-instances.sh
 }
 
 function chrome() {
@@ -44,5 +46,8 @@ function chrome() {
 }
 
 function chtsht() {
-  $FUNCTIONS_DIR_PARENT/scripts/cheatsheet.sh
+  $HOME/scripts/cheatsheet.sh
 }
+
+unset FUNCTIONS_DIR
+unset DOTFILES_DIR

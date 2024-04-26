@@ -13,16 +13,13 @@
 ############################################################################################
 
 # dotfiles directory
-dotfiledir=$(dirname $(readlink -f "$0"))
+DOTFILES_DIR=$(dirname $(readlink -f "$0"))
 
-# list of files/folders to symlink in ${homedir}
-files=(zshrc aliases prompt_timer functions envt_vars plugins)
+pushd $DOTFILES_DIR/shell_dotfiles
+./link_dotfiles.sh
+popd
 
-# create symlinks (will overwrite old dotfiles)
-for file in "${files[@]}"; do
-    echo "Creating symlink to $file in home directory."
-    ln -sf "${dotfiledir}/.${file}" "${HOME}/.${file}"
-done
+unset DOTFILES_DIR
 
 pushd scripts
 # Install OhMyZsh
