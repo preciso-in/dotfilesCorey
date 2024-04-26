@@ -16,14 +16,14 @@
 DOTFILES_DIR=$(dirname $(readlink -f "$0"))
 
 # Symlink shell configuration files to $HOME
-pushd $DOTFILES_DIR/shell_dotfiles
+# Install oh-my-zsh
+pushd $DOTFILES_DIR/shell_config
 ./link_dotfiles.sh
+./install-oh-my-zsh.sh
 popd
 unset DOTFILES_DIR
 
 pushd scripts
-# Install OhMyZsh
-source ./oh-my-zsh.sh
 # Run the MacOS Script
 source ./macOS.sh
 popd

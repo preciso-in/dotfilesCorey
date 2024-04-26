@@ -10,3 +10,5 @@ git clone https://github.com/ohmyzsh/ohmyzsh.git
 popd
 
 ln -sf "$(dirname $PWD)/git_repos/ohmyzsh" $HOME/.oh-my-zsh
+
+#TODO: Update this to use Dotfiles Directory rather than relative path
