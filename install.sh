@@ -13,7 +13,7 @@
 ############################################################################################
 
 # dotfiles directory
-dotfiledir=$(pwd)
+dotfiledir=$(dirname $(readlink -f "$0"))
 
 # list of files/folders to symlink in ${homedir}
 files=(zshrc aliases prompt_timer functions envt_vars plugins)
