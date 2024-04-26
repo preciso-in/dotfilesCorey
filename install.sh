@@ -33,6 +33,11 @@ pushd scripts
 ./create-configuration.sh
 popd
 
+# Start Services
+pushd scripts
+source ./start-services.sh
+popd
+
 # Prompt user to login to VSCode extensions
 pushd vscode
 ./vscode-instructions.sh
@@ -43,11 +48,6 @@ source ./settings/anki_addons.sh
 
 # List Browser extensions
 source ./settings/browser_extensions.sh
-
-pushd scripts
-# Start SKHD & Yabai
-source ./tidy-up.sh
-popd
 
 echo "Installation Complete!"
 
