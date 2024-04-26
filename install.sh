@@ -28,14 +28,13 @@ pushd scripts
 ./install-software.sh
 popd
 
+# Create Configurations
 pushd scripts
-# Run the MacOS Script
-source ./macOS.sh
+./create-configuration.sh
 popd
 
-# Create VSCode Symlinks
+# Prompt user to login to VSCode extensions
 pushd vscode
-./vscode-symlinks.sh
 ./vscode-instructions.sh
 popd
 
@@ -45,16 +44,8 @@ source ./settings/anki_addons.sh
 # List Browser extensions
 source ./settings/browser_extensions.sh
 
-# Add the Homebrew zsh to allowed shells
-echo "\nChanging default shell to Homebrew zsh"
-echo "$(brew --prefix)/bin/zsh" | sudo tee -a /etc/shells >/dev/null
-# Set the Homebrew zsh as default shell
-chsh -s "$(brew --prefix)/bin/zsh"
-
 pushd scripts
-# Setup git on computer
-source ./git-setup.sh
-# Tidy up installations (vault...)
+# Start SKHD & Yabai
 source ./tidy-up.sh
 popd
 
@@ -64,6 +55,4 @@ echo "\nRestart Computer to apply changes."
 
 echo "\nOpen apps from LaunchPad to add them to Spotlight."
 
-#TODO: Refactor Curl & Terminal installations
-#TODO: Refactor Display of configuration instructions into a new file
 #TODO: Refactor new script that Starts services.
