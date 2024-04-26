@@ -13,16 +13,13 @@
 ############################################################################################
 
 # dotfiles directory
-dotfiledir=$(pwd)
+DOTFILES_DIR=$(dirname $(readlink -f "$0"))
 
-# list of files/folders to symlink in ${homedir}
-files=(zshrc aliases prompt_timer functions envt_vars plugins)
-
-# create symlinks (will overwrite old dotfiles)
-for file in "${files[@]}"; do
-    echo "Creating symlink to $file in home directory."
-    ln -sf "${dotfiledir}/.${file}" "${HOME}/.${file}"
-done
+# Symlink shell configuration files to $HOME
+pushd $DOTFILES_DIR/shell_dotfiles
+./link_dotfiles.sh
+popd
+unset DOTFILES_DIR
 
 pushd scripts
 # Install OhMyZsh
@@ -42,12 +39,12 @@ echo "\n Finished installing Powerline fonts"
 
 # Run the Homebrew Script
 pushd brew # Change working directory to brew
-    ./brew.sh
+./brew.sh
 popd
 
 # Run VS Code Script
 pushd scripts
-    ./vscode.sh
+./vscode.sh
 popd
 
 # Run Anki Addons Script
