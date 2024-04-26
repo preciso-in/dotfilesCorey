@@ -15,10 +15,10 @@
 # dotfiles directory
 DOTFILES_DIR=$(dirname $(readlink -f "$0"))
 
+# Symlink shell configuration files to $HOME
 pushd $DOTFILES_DIR/shell_dotfiles
 ./link_dotfiles.sh
 popd
-
 unset DOTFILES_DIR
 
 pushd scripts
