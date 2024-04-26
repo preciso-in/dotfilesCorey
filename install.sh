@@ -12,8 +12,6 @@
 ############################################################################################
 ############################################################################################
 
-test=$1
-
 # dotfiles directory
 dotfiledir=$(pwd)
 
@@ -44,16 +42,12 @@ echo "\n Finished installing Powerline fonts"
 
 # Run the Homebrew Script
 pushd brew # Change working directory to brew
-if ! [ $1 = "test" ]; then
-    ./brew.sh
-fi
+./brew.sh
 popd
 
 # Run VS Code Script
 pushd scripts
-if ! [ $1 = "test" ]; then
-    ./vscode.sh
-fi
+./vscode.sh
 popd
 
 # Run Anki Addons Script
