@@ -27,3 +27,8 @@ if [[ ${#PROJECTS_WITH_RUNNING_INSTANCES[@]} -gt 0 ]]; then
 else
   echo "No projects with VM instances found."
 fi
+
+unset PROJECTS
+unset PROJECTS_WITH_RUNNING_INSTANCES
+unset PROJECT
+unset RUNNING_INSTANCES

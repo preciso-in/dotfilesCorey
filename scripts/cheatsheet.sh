@@ -11,3 +11,7 @@ if echo "$languages" | grep -qs $selected; then
 else
   curl cht.sh/$selected~$query | less
 fi
+
+unset languages
+unset core_utils
+unset selected

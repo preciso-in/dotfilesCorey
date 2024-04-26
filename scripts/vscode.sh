@@ -70,3 +70,6 @@ read
 unset DOTFILES_DIR
 unset SCRIPT_DIR
 unset VSCODE_USER_SETTINGS_DIR
+unset extensions
+unset installed_extensions
+unset extension

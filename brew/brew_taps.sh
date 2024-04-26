@@ -30,3 +30,5 @@ else
     echo "Installing $font_name..."
     brew install --cask "$font_name"
 fi
+
+unset font_name

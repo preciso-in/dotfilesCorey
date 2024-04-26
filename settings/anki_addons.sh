@@ -23,3 +23,5 @@ list_addOns=(
 
 echo "Add following addons in Anki"
 echo $list_addOns
+
+unset list_addons
