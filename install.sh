@@ -34,7 +34,7 @@ source ./macOS.sh
 popd
 
 # Create VSCode Symlinks
-pushd scripts
+pushd vscode
 ./vscode-symlinks.sh
 ./vscode-instructions.sh
 popd

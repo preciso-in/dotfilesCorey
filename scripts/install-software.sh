@@ -23,4 +23,6 @@ echo "\n Finished installing Powerline fonts"
 
 ./check-homebrew-path.sh
 
+pushd ../vscode
 ./install-vscode-plugins.sh
+popd
