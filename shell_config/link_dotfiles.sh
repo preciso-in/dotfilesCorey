@@ -1,8 +1,8 @@
 #! /usr/bin/env zsh
+echo -e "\n"
 
 SCRIPT_DIR=$(dirname $(readlink -f "$0"))
 DOTFILES_DIR=$(dirname $SCRIPT_DIR)
-echo "DOTFILES_DIR: $DOTFILES_DIR"
 
 # list of files/folders to symlink in ${homedir}
 files=(

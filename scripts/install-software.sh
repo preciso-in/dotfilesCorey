@@ -1,5 +1,6 @@
 #! /usr/bin/env zsh
 
+echo -e "\nInstalling Xcode"
 xcode-select --install
 
 # Run the Homebrew Script

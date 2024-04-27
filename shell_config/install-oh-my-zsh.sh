@@ -1,3 +1,7 @@
+#! /usr/bin/env zsh
+
+echo -e "\nInstalling OhMyZSh"
+
 if ! [ -d ../git_repos ]; then
   mkdir ../git_repos
 fi

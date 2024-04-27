@@ -54,5 +54,3 @@ echo "Installation Complete!"
 echo "\nRestart Computer to apply changes."
 
 echo "\nOpen apps from LaunchPad to add them to Spotlight."
-
-#TODO: Refactor new script that Starts services.

@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+echo -e "\nInstalling Homebrew"
+
 # Install Homebrew if it isn't already installed
 if ! command -v brew &>/dev/null; then
     echo "Homebrew not installed. Installing Homebrew."
