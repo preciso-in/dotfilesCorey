@@ -21,36 +21,37 @@ pushd $DOTFILES_DIR/shell_config
 ./link_dotfiles.sh
 ./install-oh-my-zsh.sh
 popd
-unset DOTFILES_DIR
 
 # Install Software using Brew, Curl, etc.
-pushd scripts
+pushd $DOTFILES_DIR/scripts
 ./install-software.sh
 popd
 
 # Create Configurations
-pushd scripts
+pushd $DOTFILES_DIR/scripts
 ./create-configuration.sh
 popd
 
 # Start Services
-pushd scripts
+pushd $DOTFILES_DIR/scripts
 source ./start-services.sh
 popd
 
 # Prompt user to login to VSCode extensions
-pushd vscode
+pushd $DOTFILES_DIR/vscode
 ./vscode-instructions.sh
 popd
 
 # Run Anki Addons Script
-source ./settings/anki_addons.sh
+source $DOTFILES_DIR/settings/anki_addons.sh
 
 # List Browser extensions
-source ./settings/browser_extensions.sh
+source $DOTFILES_DIR/settings/browser_extensions.sh
 
 echo "Installation Complete!"
 
 echo "\nRestart Computer to apply changes."
 
 echo "\nOpen apps from LaunchPad to add them to Spotlight."
+
+unset DOTFILES_DIR
