@@ -1,6 +1,6 @@
 #! /usr/bin/env zsh
 
-languages=$(echo "typescript javascript" | tr " " "\n")
+languages=$(echo "typescript javascript docker" | tr " " "\n")
 core_utils=$(echo "awk bash find jq git sed xargs" | tr " " "\n")
 selected=$(echo -e "$languages\n$core_utils" | fzf)
 echo "Query: "
