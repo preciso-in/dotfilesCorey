@@ -7,3 +7,7 @@ export EDITOR='nvim'
 # Exclude duplicate commands from history
 # Exclude commands that start with a space i.e for commands containing secrets
 export HISTCONTROL=ignoredups:erasedups:ignorespace
+
+# Set Volta Home
+export VOLTA_HOME=$HOME/.volta
+export PATH=$VOLTA_HOME/bin:$PATH
