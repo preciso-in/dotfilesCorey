@@ -42,7 +42,7 @@ sudo docker run \
 
 echo "\n\n" >>hosts
 
-cat custom_hosts >>hosts
+cat new_host_entries >>hosts
 popd
 
 sudo cp $DOTFILES_DIR/MacOS/hosts /etc/hosts
