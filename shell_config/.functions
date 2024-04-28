@@ -1,5 +1,4 @@
 # #! /usr/bin/env zsh
-echo "In file .functions"
 
 FUNCTIONS_DIR=$(dirname $(readlink -f "$0"))
 DOTFILES_DIR=$(dirname $FUNCTIONS_DIR)
