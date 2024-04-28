@@ -58,22 +58,12 @@
   },
   "vim.insertModeKeyBindings": [
     {
-      "before": [
-        "j",
-        "k"
-      ],
-      "after": [
-        "<Esc>"
-      ]
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
     },
     {
-      "before": [
-        "J",
-        "K"
-      ],
-      "after": [
-        "<Esc>"
-      ]
+      "before": ["J", "K"],
+      "after": ["<Esc>"]
     }
   ],
   "editor.quickSuggestionsDelay": 100,
@@ -86,9 +76,7 @@
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "newUntitledFile",
   "editor.lineNumbers": "relative",
-  "workbench.settings.applyToAllProfiles": [
-    "editor.lineNumbers"
-  ],
+  "workbench.settings.applyToAllProfiles": ["editor.lineNumbers"],
   "vim.smartRelativeLine": true,
   "workbench.editor.empty.hint": "hidden",
   "files.autoSave": "onFocusChange",
@@ -104,6 +92,7 @@
   "editor.tabSize": 2,
   "git.autofetch": true,
   "files.associations": {
-    "**/.gitignore": "plaintext"
+    "**/.gitignore": "plaintext",
+    "**/hosts": "plaintext"
   }
 }

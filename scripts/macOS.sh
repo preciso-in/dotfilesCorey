@@ -13,3 +13,11 @@ diskutil list
 printf "\n Press Enter when done"
 read
 sudo mdutil -i off -d /Volumes/PortableSSD/
+
+# Add Adblock hosts file to OS
+SCRIPT_DIR=$(dirname $(readlink -f "$0"))
+DOTFILES_DIR=$(dirname $SCRIPT_DIR)
+echo $DOTFILES_DIR
+sudo cp $DOTFILES_DIR/MacOS/hosts /etc/hosts
+unset DOTFILES_DIR
+unset SCRIPT_DIR
