@@ -94,5 +94,7 @@
   "files.associations": {
     "**/.gitignore": "plaintext",
     "**/hosts": "plaintext"
-  }
+  },
+  "settingsSync.keybindingsPerPlatform": false,
+  "search.followSymlinks": false
 }
