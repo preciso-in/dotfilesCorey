@@ -30,3 +30,4 @@ git_repos
 
 # hosts (Adblock) file that is downloaded from git repo
 **/hosts
+DownloadedHosts
