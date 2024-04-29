@@ -1,5 +1,27 @@
 #! /usr/bin/env zsh
 
+# Check if Docker is running
+if ! docker info &>/dev/null; then
+  echo "Docker is not running. Starting Docker..."
+  # Start Docker
+  if [ "$(uname)" = "Darwin" ]; then
+    # On macOS, use the Docker Desktop app
+    open -a Docker
+  else
+    # On Linux, use the systemctl command
+    sudo systemctl start docker
+  fi
+
+  # Wait for Docker to start
+  while ! docker info &>/dev/null; do
+    echo "Waiting for Docker to start..."
+    sleep 1
+  done
+  echo "Docker is now running."
+else
+  echo "Docker is already running."
+fi
+
 # Add Adblock hosts file to OS
 SCRIPT_DIR=$(dirname $(readlink -f "$0"))
 DOTFILES_DIR=$(dirname $SCRIPT_DIR)
