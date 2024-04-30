@@ -12,7 +12,6 @@ extensions=(
     craigb85.custom-window-zoom
     eamodio.gitlens
     hashicorp.terraform
-    wix.vscode-import-cost
     orta.vscode-jest
     ritwickdey.liveserver
     ms-vscode.makefile-tools
@@ -43,3 +42,6 @@ echo "VS Code extensions have been installed."
 unset extensions
 unset installed_extensions
 unset extension
+
+# Notes
+wix.vscode-import-cost causes very high CPU utilistaion
