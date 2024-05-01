@@ -62,3 +62,6 @@ popd
 
 unset DOTFILES_DIR
 unset SCRIPT_DIR
+
+sudo dscacheutil -flushcache
+sudo killall -HUP mDNSResponder
