@@ -52,6 +52,8 @@ cat downloaded-hosts >>hosts
 echo "\n\n" >>hosts
 
 cat new_host_entries >>hosts
+sed -i '' '/reddit/d' hosts
+sed -i '' '/redd.it/d' hosts
 
 sudo cp hosts /etc/hosts
 
