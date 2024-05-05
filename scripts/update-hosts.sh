@@ -45,7 +45,7 @@ docker run \
   ghcr.io/stevenblack/hosts:latest updateHostsFile.py \
   --auto \
   --replace \
-  --extensions gambling porn fakenews 
+  --extensions gambling porn fakenews
 
 cat downloaded-hosts >>hosts
 
