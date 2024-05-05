@@ -36,7 +36,7 @@ touch hosts
 touch downloaded-hosts
 
 # Create hosts file from Steven Black's project
-sudo docker run \
+docker run \
   --pull always \
   --platform linux/x86_64 \
   --rm \
@@ -54,6 +54,8 @@ echo "\n\n" >>hosts
 cat new_host_entries >>hosts
 sed -i '' '/reddit/d' hosts
 sed -i '' '/redd.it/d' hosts
+sed -i '' '/googleapis/d' hosts
+sed -i '' '/gstatic/d' hosts
 
 sudo cp hosts /etc/hosts
 
