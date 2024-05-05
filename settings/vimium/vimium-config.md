@@ -23,6 +23,9 @@ map <C-j> scrollFullPageDown
 map <C-k> scrollFullPageUp
 
 map p togglePinTab
+
+unmap <a-p>
+map <C-m> toggleMuteTab
 ```
 
 ### Custom key mappings
