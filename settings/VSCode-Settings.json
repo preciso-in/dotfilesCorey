@@ -96,5 +96,11 @@
     "**/hosts": "plaintext"
   },
   "settingsSync.keybindingsPerPlatform": false,
-  "search.followSymlinks": false
+  "search.followSymlinks": false,
+  "[git-commit]": {
+    "editor.rulers": [50, 72],
+    "editor.wordWrap": "off",
+    "workbench.editor.restoreViewState": false
+  },
+  "git.inputValidation": true
 }
