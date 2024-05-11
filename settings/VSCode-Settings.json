@@ -93,7 +93,8 @@
   "git.autofetch": true,
   "files.associations": {
     "**/.gitignore": "plaintext",
-    "**/hosts": "plaintext"
+    "**/hosts": "plaintext",
+    "**/*rc": "plaintext"
   },
   "settingsSync.keybindingsPerPlatform": false,
   "search.followSymlinks": false,
@@ -102,5 +103,6 @@
     "editor.wordWrap": "off",
     "workbench.editor.restoreViewState": false
   },
-  "git.inputValidation": true
+  "git.inputValidation": true,
+  "diffEditor.ignoreTrimWhitespace": false
 }
