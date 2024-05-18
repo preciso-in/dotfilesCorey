@@ -24,5 +24,19 @@
   {
     "key": "alt+;",
     "command": "extension.aceJump.multiChar"
+  },
+  {
+    "key": "alt+tab",
+    "command": "editor.action.inlineSuggest.acceptNextWord",
+    "when": "inlineSuggestionVisible && !editorReadonly"
+  },
+  {
+    "key": "cmd+right",
+    "command": "-editor.action.inlineSuggest.acceptNextWord",
+    "when": "inlineSuggestionVisible && !editorReadonly"
+  },
+  {
+    "key": "shift+alt+tab",
+    "command": "editor.action.inlineSuggest.acceptNextLine"
   }
 ]

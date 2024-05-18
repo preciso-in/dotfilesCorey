@@ -44,4 +44,4 @@ unset installed_extensions
 unset extension
 
 # Notes
-wix.vscode-import-cost causes very high CPU utilistaion
+# wix.vscode-import-cost causes very high CPU utilistaion
