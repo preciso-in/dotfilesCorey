@@ -3,7 +3,7 @@
 list_extensions=(
     "vimium"
     "GoFullPage"
-
+    "Enhancer for Youtube"
 )
 
 echo "Add following extensions to Chrome, Opera and Arc"
