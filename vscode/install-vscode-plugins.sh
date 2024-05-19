@@ -5,24 +5,29 @@ echo "\n\nInstalling VS Code extensions"
 # Install VS Code Extensions
 extensions=(
     GitHub.copilot
-    esbenp.prettier-vscode
     aaron-bond.better-comments
-    formulahendry.auto-rename-tag
-    naumovs.color-highlight
     craigb85.custom-window-zoom
     eamodio.gitlens
-    hashicorp.terraform
-    orta.vscode-jest
-    ritwickdey.liveserver
-    ms-vscode.makefile-tools
-    shd101wyy.markdown-preview-enhanced
-    yoavbls.pretty-ts-errors
-    humao.rest-client
+    esbenp.prettier-vscode
+    formulahendry.auto-rename-tag
     foxundermoon.shell-format
     gruntfuggly.todo-tree
-    vscodevim.vim
+    hashicorp.terraform
+    humao.rest-client
     jeremyljackson.vs-docblock
     lucax88x.codeacejumper
+    moshfeu.compare-folders
+    ms-azuretools.vscode-docker
+    ms-vscode.makefile-tools
+    naumovs.color-highlight
+    orta.vscode-jest
+    ritwickdey.liveserver
+    shd101wyy.markdown-preview-enhanced
+    skellock.just
+    steoates.autoimport
+    supermaven.supermaven
+    vscodevim.vim
+    yoavbls.pretty-ts-errors
 )
 
 # Get a list of all currently installed extensions.
