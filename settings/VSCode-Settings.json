@@ -119,5 +119,6 @@
     "workbench.editor.restoreViewState": false
   },
   "git.inputValidation": true,
-  "diffEditor.ignoreTrimWhitespace": false
+  "diffEditor.ignoreTrimWhitespace": false,
+  "continue.enableTabAutocomplete": false
 }
