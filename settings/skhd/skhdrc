@@ -48,8 +48,8 @@ ctrl + alt -l: yabai -m window --warp east
 
 # move window to display left and right
 # If below 2 lines are split into 4 lines, skhd stops working
-shift + alt - s:yabai -m window --display west; yabai -m display --focus west
-shift + alt - g:yabai -m window --display east; yabai -m display --focus east
+shift + alt - g:yabai -m window --display west; yabai -m display --focus west
+shift + alt - s:yabai -m window --display east; yabai -m display --focus east
 
 # move window to space #
 shift + alt - 1:yabai -m window --space 1
