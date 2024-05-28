@@ -41,10 +41,10 @@ shift + alt - h: yabai -m window --swap west
 shift + alt - l: yabai -m window --swap east
 
 # move window and split
-ctrl + alt -j: yabai -m window --warp south
-ctrl + alt -k: yabai -m window --warp north
-ctrl + alt -h: yabai -m window --warp west
-ctrl + alt -l: yabai -m window --warp east
+ctrl + alt - j: yabai -m window --warp south
+ctrl + alt - k: yabai -m window --warp north
+ctrl + alt - h: yabai -m window --warp west
+ctrl + alt - l: yabai -m window --warp east
 
 # move window to display left and right
 # If below 2 lines are split into 4 lines, skhd stops working
@@ -65,3 +65,7 @@ shift + alt - 9:yabai -m window --space 9
 # Starting / Stopping Yabai
 ctrl + alt - s: yabai --start-service
 ctrl + alt - q: yabai --stop-service
+
+# Focus monitor
+ctrl + alt - f: yabai -m display --focus prev
+ctrl + alt - g: yabai -m display --focus next
