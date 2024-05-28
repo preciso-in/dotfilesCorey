@@ -1,0 +1,53 @@
+# https://www.wikihow.com/Remove-Sponsored-Ads-from-uTorrent
+
+// Turn off Ads 
+// Turn following options "false" in Preferences -> Advanced
+gui.show_plus_upsell
+offers.left_rail_offer_enabled
+offers.sponsored_torrent_offer_enabled
+gui.show_notorrents_node
+offers.content_offer_autoexec
+bt.enable_pulse
+
+# Download Settings
+bt.prio_first_last_piece ==> true
+bt.prioritie_partial_pieces ==> true
+bt.progressive_piece_picker ==> true
+
+# Torrent Settings
+# Preferences -> General
+Start uTorrent when Windows Starts ==> uncheck
+Append .!ut to incomplete files ==> check
+
+# UI Settings
+# Preferences -> UI Settings
+Confirm when deleting torrents
+Show current speed in the title bar
+Use fine grained file priorities
+Show speed limits in the status bar
+Always show tray icon
+Close button closes to Tray
+Dont start the download automatically
+Show options to change name and location of torrent data
+Actions for double Click ==> Open Folder
+
+# Directories Settings
+# Preferences -> Directories
+Put new downloads in ...
+Move completed downloads to ...
+Append the torrent's label
+Store .torrents in...
+Automatically load .torrents from ...
+Deleted loaded .torrents
+
+# Queuing Settings
+# Preferences -> Queuing
+Maximum number of active torrents ==> 3
+Maximum number of active downloads ==> 3
+
+# UI Extras
+# Preferences -> Advanced -> UI Extras
+Override automatic speed popup list
+
+
+
