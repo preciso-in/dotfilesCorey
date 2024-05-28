@@ -31,4 +31,8 @@ cask_apps=(
     # Needs Password
     "microsoft-onenote"
     "microsoft-remote-desktop"
+
+    # For Logitech G604
+    # Do not use On Board Memory Option for G604. It does not work.
+    "logitech-g-hub"
 )
