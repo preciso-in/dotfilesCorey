@@ -3,6 +3,7 @@
 # Define an array of formulae to install using Homebrew.
 formulae=(
     "bash"
+    "watch"
     "zsh"
     "git"
     "ripgrep"
