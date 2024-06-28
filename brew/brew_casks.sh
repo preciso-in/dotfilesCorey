@@ -35,4 +35,10 @@ cask_apps=(
     # For Logitech G604
     # Do not use On Board Memory Option for G604. It does not work.
     "logitech-g-hub"
+
+    # For Karabiner-Elements
+    "karabiner-elements"
+
+    # Windows like Alt + Tab
+    "alt-tab"
 )
