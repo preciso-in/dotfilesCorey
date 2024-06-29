@@ -26,7 +26,7 @@
     "command": "extension.aceJump.multiChar"
   },
   {
-    "key": "alt+tab",
+    "key": "ctrl+`",
     "command": "editor.action.inlineSuggest.acceptNextWord",
     "when": "inlineSuggestionVisible && !editorReadonly"
   },
@@ -38,5 +38,10 @@
   {
     "key": "shift+alt+tab",
     "command": "editor.action.inlineSuggest.acceptNextLine"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "-workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
   }
 ]
