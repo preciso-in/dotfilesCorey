@@ -91,6 +91,9 @@ formulae=(
     "koekeishiya/formulae/yabai"
     "yabai"
     "skhd"
+
+    # Install minikube for K8s
+    "minikube"
 )
 
 # Notes
