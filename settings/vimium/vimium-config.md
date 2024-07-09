@@ -9,10 +9,12 @@ Browser Extension Settings
 ### Excluded URLs & Keys Pattern
 
 ```
-unmap f
-unmap F
 unmap j
 unmap k
+"Mute for video sites - Youtube, JioCinema, PrimeVideo
+unmap m
+"Full screen mode for video sites - Youtube, JioCinema, PrimeVideo
+unmap f
 
 map u LinkHints.activateMode
 map U LinkHints.activateModeToOpenInNewTab
@@ -30,11 +32,13 @@ map <C-m> toggleMuteTab
 
 ### Custom key mappings
 
+#### String after `|` is the key sequence that will be passed directly to the browser
+
 ```
-https?://www.youtube.com/*/
 https?://mail.google.com/*
 https?://www.247sudoku.com/*
 https?://www.udemy.com/*
+https?://www.youtube.com/*      | /<>0123456789ft
 ```
 
 ![](./Vimium%20-%20settings.png)
