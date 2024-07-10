@@ -41,4 +41,7 @@ cask_apps=(
 
     # Windows like Alt + Tab
     "alt-tab"
+
+    # R Studio
+    "rstudio"
 )

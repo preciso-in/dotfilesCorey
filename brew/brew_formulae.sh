@@ -94,6 +94,9 @@ formulae=(
 
     # Install minikube for K8s
     "minikube"
+
+    # Install r
+    "r"
 )
 
 # Notes
