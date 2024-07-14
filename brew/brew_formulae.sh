@@ -97,6 +97,9 @@ formulae=(
 
     # Install r
     "r"
+
+    # Install istioctl
+    "istioctl"
 )
 
 # Notes
