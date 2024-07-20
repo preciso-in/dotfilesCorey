@@ -100,6 +100,12 @@ formulae=(
 
     # Install istioctl
     "istioctl"
+
+    # Install kubeshark
+    "kubeshark"
+
+    # Install Redhat OpenShift CLI (oc) for Kubernetes
+    "openshift-cli"
 )
 
 # Notes

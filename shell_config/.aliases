@@ -54,3 +54,6 @@ alias ll='eza -alh'
 alias tree='eza -T'
 alias treel2='eza -T -L 2'
 alias ls='eza -G'
+
+# Kubectl Aliases
+alias kcl='kubectl'
