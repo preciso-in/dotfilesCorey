@@ -35,10 +35,10 @@ map <C-m> toggleMuteTab
 #### String after `|` is the key sequence that will be passed directly to the browser
 
 ```
-https?://mail.google.com/*
 https?://www.247sudoku.com/*
 https?://www.udemy.com/*
-https?://www.youtube.com/*      | /<>0123456789ft
+https?://www.youtube.com/*      | /<>0123456789fFt
+https?://www.primevideo.com/*      | Ff
 ```
 
 ![](./Vimium%20-%20settings.png)
