@@ -19,6 +19,7 @@ plugins=(
     terraform
     thefuck
     volta
+    kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
