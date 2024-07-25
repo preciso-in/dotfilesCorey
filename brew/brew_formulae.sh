@@ -97,6 +97,7 @@ formulae=(
 
     # Install K8s ecosystem
     "minikube"
+    "kubectl"
     "istioctl"
     "helm"
     "kubeshark"
