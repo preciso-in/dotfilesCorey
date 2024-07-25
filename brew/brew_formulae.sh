@@ -92,21 +92,17 @@ formulae=(
     "yabai"
     "skhd"
 
-    # Install minikube for K8s
-    "minikube"
-    "stern"
-
     # Install r
     "r"
 
-    # Install istioctl
+    # Install K8s ecosystem
+    "minikube"
     "istioctl"
-
-    # Install kubeshark
+    "helm"
     "kubeshark"
-
-    # Install Redhat OpenShift CLI (oc) for Kubernetes
     "openshift-cli"
+    "stern"
+
 )
 
 # Notes
