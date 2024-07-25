@@ -104,6 +104,8 @@ formulae=(
     "openshift-cli"
     "stern"
 
+    # Install GitHub cli
+    "gh"
 )
 
 # Notes

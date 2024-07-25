@@ -1,7 +1,6 @@
 autoload -Uz colors && colors
 setopt PROMPT_SUBST
 
-source $HOME/.oh-my-zsh/oh-my-zsh.sh
 export PATH="/opt/homebrew/bin:$PATH"
 
 export ZSH="$HOME/.oh-my-zsh"
@@ -22,13 +21,13 @@ plugins=(
     kubectl
 )
 
-source $ZSH/oh-my-zsh.sh
-
 # Load dotfiles:
 for file in ~/.{aliases,envt_vars,functions,plugins,prompt_timer}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
+
+source $ZSH/oh-my-zsh.sh
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/vault vault
