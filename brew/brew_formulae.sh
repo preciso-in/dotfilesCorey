@@ -103,6 +103,8 @@ formulae=(
     "kubeshark"
     "openshift-cli"
     "stern"
+    "helmfile"
+    "teller"
 
     # Install GitHub cli
     "gh"
