@@ -19,7 +19,10 @@ plugins=(
     thefuck
     volta
     kubectl
+    zsh-syntax-highlighting
+    zsh-autosuggestions
 )
+source $ZSH/oh-my-zsh.sh
 
 # Load dotfiles:
 for file in ~/.{aliases,envt_vars,functions,plugins,prompt_timer}; do
@@ -27,7 +30,6 @@ for file in ~/.{aliases,envt_vars,functions,plugins,prompt_timer}; do
 done
 unset file
 
-source $ZSH/oh-my-zsh.sh
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/vault vault
