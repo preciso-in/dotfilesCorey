@@ -23,6 +23,7 @@ cask_apps=(
     "anki"
     "obsidian"
     "whatsapp"
+    "xnviewmp"
 
     # Virtualisation
     "utm"
