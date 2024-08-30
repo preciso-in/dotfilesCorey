@@ -45,4 +45,9 @@ cask_apps=(
 
     # R Studio
     "rstudio"
+
+    # VirtualBox
+    # "virtualbox"
+    # Does not work. Only Dev preview version available that was released in Mar '23
+
 )

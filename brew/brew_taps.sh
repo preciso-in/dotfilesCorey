@@ -6,6 +6,9 @@ brew tap rusty-ferris-club/tap # Needed for shellclear
 # Tap for Hashicorp Vault
 brew tap hashicorp/tap
 
+# Tap for Civo Tools
+brew tap civo/tools
+
 # Tap the Homebrew font cask repository if not already tapped
 brew tap | grep -q "^homebrew/cask-fonts$" || brew tap homebrew/cask-fonts
 

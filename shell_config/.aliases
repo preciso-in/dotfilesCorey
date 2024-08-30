@@ -57,3 +57,6 @@ alias ls='eza -G'
 
 # Kubectl alias
 alias kcl='kubectl'
+# kc is short for kubectl config, hence kcrns
+alias kcrns='kubectl create namespace'
+alias kgns='kubectl get namespace'

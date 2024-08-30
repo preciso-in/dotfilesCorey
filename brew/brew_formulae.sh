@@ -108,6 +108,17 @@ formulae=(
 
     # Install GitHub cli
     "gh"
+
+    # Load Generator
+    # Replacement for apache bench
+    "hey"
+
+    # Cloudflare TLS/SSL CLI
+    "cfssl"
+
+    # Install Civo CLI
+    # Should be installed after installing cask
+    "civo"
 )
 
 # Notes
