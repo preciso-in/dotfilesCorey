@@ -1,10 +1,5 @@
 [
     {
-        "key": "shift+enter",
-        "command": "extension.vim_escape",
-        "when": "editorTextFocus"
-    },
-    {
         "key": "ctrl+y",
         "command": "editor.action.deleteLines",
         "when": "textInputFocus && !editorReadonly"
