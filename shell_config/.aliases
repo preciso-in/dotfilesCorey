@@ -60,3 +60,6 @@ alias kcl='kubectl'
 # kc is short for kubectl config, hence kcrns
 alias kcrns='kubectl create namespace'
 alias kgns='kubectl get namespace'
+
+# Use GNU sed instead of OSX sed
+alias sed='gsed'

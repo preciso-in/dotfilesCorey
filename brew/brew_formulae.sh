@@ -123,6 +123,9 @@ formulae=(
     # Get linux text utilities like envsubst
     # ex. envsubst < ingress.yaml | kubectl apply -f -
     "gettext"
+
+    # Get GNU-Sed because sed on Mac is finicky
+    "gnu-sed"
 )
 
 # Notes
