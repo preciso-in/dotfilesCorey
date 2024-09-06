@@ -26,9 +26,9 @@
     "command": "extension.aceJump.multiChar"
   },
   {
-    "key": "ctrl+`",
+    "key": "ctrl+tab",
     "command": "editor.action.inlineSuggest.acceptNextWord",
-    "when": "inlineSuggestionVisible && !editorReadonly"
+    "when": "inlineSuggestionVisible && !editorReadonly && vim.active && !inDebugRepl && vim.mode == 'Insert'"
   },
   {
     "key": "cmd+right",
