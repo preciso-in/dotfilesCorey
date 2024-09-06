@@ -119,6 +119,10 @@ formulae=(
     # Install Civo CLI
     # Should be installed after installing cask
     "civo"
+
+    # Get linux text utilities like envsubst
+    # ex. envsubst < ingress.yaml | kubectl apply -f -
+    "gettext"
 )
 
 # Notes
