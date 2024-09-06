@@ -110,7 +110,8 @@
   "files.associations": {
     "**/.gitignore": "plaintext",
     "**/hosts": "plaintext",
-    "**/*rc": "plaintext"
+    "**/*rc": "plaintext",
+    "**/*.txt": "plaintext"
   },
   "settingsSync.keybindingsPerPlatform": false,
   "search.followSymlinks": false,
