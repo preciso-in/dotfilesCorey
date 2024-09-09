@@ -4,7 +4,7 @@ function preexec() {
   cmd_start=$(($(print -P %D{%s%6.}) / 1000))
 
   width=$(tput cols -1)
-  local text="Command executed at $(date +'%d-%b-%Y@%H:%M:%S') "
+  local text="$(date +'%d-%b-%Y@%H:%M:%S') "
 
   # Use printf to format the text
   printf "%${width}s\n" "$text"
@@ -42,8 +42,13 @@ function precmd() {
 }
 
 parse_git_branch() {
-  local branch="\uE0A0"
+  local branch=""
   branch+=$(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+
+  if [[ -n ${branch} ]]; then
+    branch="\uE0A0${branch}"
+  fi
+
   local changes=""
   local git_status=$(git status --porcelain 2>/dev/null)
   local color=green
