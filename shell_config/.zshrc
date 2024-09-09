@@ -25,7 +25,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Load dotfiles:
-for file in ~/.{aliases,envt_vars,functions,plugins,prompt_timer}; do
+for file in ~/.{aliases,envt_vars,functions,plugins,prompt}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file

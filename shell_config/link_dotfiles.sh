@@ -10,7 +10,7 @@ files=(
   envt_vars
   functions
   plugins
-  prompt_timer
+  prompt
   zshrc
 )
 
