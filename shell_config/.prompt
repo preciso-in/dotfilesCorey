@@ -2,6 +2,12 @@ setopt prompt_subst
 
 function preexec() {
   cmd_start=$(($(print -P %D{%s%6.}) / 1000))
+
+  width=$(tput cols -1)
+  local text="Command executed at $(date +'%d-%b-%Y@%H:%M:%S') "
+
+  # Use printf to format the text
+  printf "%${width}s\n" "$text"
 }
 
 function precmd() {
@@ -35,4 +41,32 @@ function precmd() {
   fi
 }
 
-RPROMPT='%F{5}$(if [ $cmd_time ]; then echo "($cmd_time) "; fi)$(date "+%F %T")%F{none}'
+parse_git_branch() {
+  local branch=""
+  branch=$(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+  local git_status=$(git status --porcelain 2>/dev/null)
+  local color=green
+  if echo "$git_status" | grep -q "^ M"; then
+    color=yellow
+    branch="${branch}*"
+  fi
+  if echo "$git_status" | grep -qE "^ A|^\?\?"; then
+    color=yellow
+    branch="${branch}+"
+  fi
+  if echo "$git_status" | grep -q "^ D"; then
+    color=yellow
+    branch="${branch}-"
+  fi
+
+  if [[ -n "$branch" ]]; then
+    branch=[%F{${color}}${branch}%F{reset}]
+  fi
+  echo "$branch"
+}
+
+RPROMPT="%1~$(parse_git_branch)"
+
+PROMPT='%F{5}$(if [ $cmd_time ]; then echo "($cmd_time) "; fi)$(date "+%F %T")%F{none}
+%~
+%(?.%F{green}⏺.%F{red}⏺)%f %1~ %# '
