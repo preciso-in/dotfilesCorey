@@ -1,3 +1,6 @@
+# Enable aliases to be passed to sudo
+alias sudo='sudo '
+
 # Shortcuts
 alias ch='history | grep "git commit"'
 alias hg='history | grep'
