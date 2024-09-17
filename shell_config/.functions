@@ -34,6 +34,16 @@ function cdf() {
   cd $(find . -name .volta -prune -o -name node_modules -prune -o -name .terraform -prune -o -name .git -prune -o -name Library -prune -o -name Music -prune -o -name .local -prune -o -name .docker -prune -o -name Pictures -prune -o -type d -print | grep -v "Operation not permitted" | fzf)
 }
 
+function codef() {
+  j $1
+  code $(pwd)
+}
+
+function cursor() {
+  j $1
+  cursor $(pwd)
+}
+
 function count_gcloud_instances() {
   $HOME/scripts/count-gcloud-instances.sh
 }
