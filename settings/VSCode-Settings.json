@@ -44,7 +44,7 @@
     "source.fixAll.eslint": "explicit",
     "source.fixAll.tslint": "explicit",
     "source.organizeImports": "never",
-    "source.sortImports": true
+    "source.sortImports": "explicit"
   },
   "editor.wordWrap": "on",
   "workbench.colorTheme": "Dark Modern",
@@ -62,22 +62,12 @@
   },
   "vim.insertModeKeyBindings": [
     {
-      "before": [
-        "j",
-        "k"
-      ],
-      "after": [
-        "<Esc>"
-      ]
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
     },
     {
-      "before": [
-        "J",
-        "K"
-      ],
-      "after": [
-        "<Esc>"
-      ]
+      "before": ["J", "K"],
+      "after": ["<Esc>"]
     }
   ],
   "editor.quickSuggestionsDelay": 100,
@@ -90,9 +80,7 @@
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "newUntitledFile",
   "editor.lineNumbers": "relative",
-  "workbench.settings.applyToAllProfiles": [
-    "editor.lineNumbers"
-  ],
+  "workbench.settings.applyToAllProfiles": ["editor.lineNumbers"],
   "vim.smartRelativeLine": true,
   "workbench.editor.empty.hint": "hidden",
   "files.autoSave": "onFocusChange",
@@ -116,10 +104,7 @@
   "settingsSync.keybindingsPerPlatform": false,
   "search.followSymlinks": false,
   "[git-commit]": {
-    "editor.rulers": [
-      50,
-      72
-    ],
+    "editor.rulers": [50, 72],
     "editor.wordWrap": "off",
     "workbench.editor.restoreViewState": false
   },
@@ -128,5 +113,6 @@
   "continue.enableTabAutocomplete": false,
   "diffEditor.maxComputationTime": 0,
   "vim.easymotion": true,
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.title": "Code - ${activeEditorShort}${separator}${rootName}${separator}${profileName}"
 }
