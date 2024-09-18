@@ -44,6 +44,20 @@ function cursor() {
   cursor $(pwd)
 }
 
+function onlyYAMLKeys() {
+  # if $1 is file, then
+  if [ -f $1 ]; then
+    cat $1 | sed 's/: .*/:/' | yq
+    return
+  fi
+
+  # if $1 is string, then
+  if [ -n "$1" ]; then
+    echo $1 | sed 's/: .*/:/' | yq
+    return
+  fi
+}
+
 function count_gcloud_instances() {
   $HOME/scripts/count-gcloud-instances.sh
 }
