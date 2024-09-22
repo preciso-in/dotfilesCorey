@@ -18,12 +18,16 @@
       "pattern": "https://www.mechanical-keyboard.org/key-rollover-test/*"
     },
     {
-      "passKeys": "/<>0123456789fFm",
+      "passKeys": "/<>0123456789fFmPN",
       "pattern": "https?://www.youtube.com/*"
     },
     {
       "passKeys": "fF",
       "pattern": "https?://www.primevideo.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://app.eraser.io/*"
     }
   ]
 }
