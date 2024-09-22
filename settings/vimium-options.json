@@ -11,7 +11,7 @@
     },
     {
       "passKeys": "",
-      "pattern": "https?://keyboardchecker.com/#"
+      "pattern": "https?://keyboardchecker.com/*"
     },
     {
       "passKeys": "",
