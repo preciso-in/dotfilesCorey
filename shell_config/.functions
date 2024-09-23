@@ -43,7 +43,7 @@ function codef() {
   fi
 }
 
-function cursor() {
+function cursorf() {
   if [[ "$1" == "." || "$1" == ".." ]]; then
     code .
   else
