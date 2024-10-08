@@ -28,6 +28,10 @@
     {
       "passKeys": "",
       "pattern": "https?://app.eraser.io/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://killercoda.com/*"
     }
   ]
 }
