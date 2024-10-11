@@ -24,6 +24,8 @@
   # Edit .zshrc - Add plugins, Change Default Editor, Add spaces to prompt
   sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting kubectl you-should-use)/' $HOME/.zshrc
   echo -e "\nexport EDITOR=vi" >>$HOME/.zshrc
+  echo -e "\nalias kex='kubectl explain'" >>$HOME/.zshrc
+  echo -e "\nkyml() {kubectl explain $1 | egrep '<.*>'}"
   echo -e '\nprecmd() {
   echo -e "\n\n"
 }' >>.zshrc
@@ -40,14 +42,16 @@ set relativenumber
 
 " Set Cursor to blinking line in insert mode
 " Set Cursor to block for Normal mode
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+let &t_SI = "\e[5 q"
+let &t_EI = "\e[0 q"
 
 " Fix delay when changing cursor from Insert to Normal mode and back
 set ttimeout
 set ttimeoutlen=1
 set ttyfast
+
+set tabstop=2
+set expandtab
 EOF
 
   # Update yq version
