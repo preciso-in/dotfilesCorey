@@ -126,6 +126,10 @@ formulae=(
 
     # Get GNU-Sed because sed on Mac is finicky
     "gnu-sed"
+
+    # Terminal file manager
+    # Use ranger in place of joshuto for Linux
+    "joshuto"
 )
 
 # Notes
