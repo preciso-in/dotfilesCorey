@@ -12,6 +12,13 @@
   sudo apt install python3-dev python3-pip python3-setuptools -y
   pip3 install thefuck --user
 
+  # Install neofetch
+  # Get Distro details
+  sudo apt install neofetch -y
+
+  # Better ls - Show icons for file/dir types
+  sudo apt install lsd -y
+
   # Install ZSh & OhMyZSh
   sudo apt install zsh -y
   sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
