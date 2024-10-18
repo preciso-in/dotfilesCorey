@@ -8,7 +8,7 @@
 
 {
   # Install thefuck plugin code
-  sudo apt update -y
+  sudo apt update
   sudo apt install python3-dev python3-pip python3-setuptools -y
   pip3 install thefuck --user
 
@@ -17,7 +17,7 @@
   sudo apt install neofetch -y
 
   # Better ls - Show icons for file/dir types
-  sudo apt install lsd -y
+  snap install lsd
 
   # Install ZSh & OhMyZSh
   sudo apt install zsh -y
@@ -31,8 +31,18 @@
   # Edit .zshrc - Add plugins, Change Default Editor, Add spaces to prompt
   sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting kubectl you-should-use)/' $HOME/.zshrc
   echo -e "\nexport EDITOR=vi" >>$HOME/.zshrc
+  export PATH=$PATH:/root/.local/bin
+  eval $(thefuck --alias)
   echo -e "\nalias kex='kubectl explain'" >>$HOME/.zshrc
-  echo -e "\nkyml() {kubectl explain $1 | egrep '<.*>'}"
+
+  echo -e "\nalias kcrns='kubectl create namespace' " >>$HOME/.zshrc
+  echo -e "\nalias kgns='kubectl get namespace' " >>$HOME/.zshrc
+  echo -e "\nalias kgpv='kubectl get pv' " >>$HOME/.zshrc
+  echo -e "\nalias kdpv='kubectl describe pv' " >>$HOME/.zshrc
+  echo -e "\nalias kdelpv='kubectl delete pv' " >>$HOME/.zshrc
+  echo -e "\nalias kepv='kubectl edit pv' " >>$HOME/.zshrc
+
+  echo -e "\nkyml() {kubectl explain \$1 | egrep '<.*>'}" >>$HOME/.zshrc
   echo -e '\nprecmd() {
   echo -e "\n\n"
 }' >>.zshrc
