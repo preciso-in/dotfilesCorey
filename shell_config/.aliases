@@ -63,6 +63,31 @@ alias kcl='kubectl'
 # kc is short for kubectl config, hence kcrns
 alias kcrns='kubectl create namespace'
 alias kgns='kubectl get namespace'
+alias kgpv='kubectl get pv'
+alias kdpv='kubectl describe pv'
+alias kdelpv='kubectl delete pv'
+alias kepv='kubectl edit pv'
 
 # Use GNU sed instead of OSX sed
 alias sed='gsed'
+
+# Useful Git aliases
+git config --global alias.st "status -s"
+git config --global alias.sta "status"
+git config --global alias.conf "config --global --edit"
+git config --global alias.cge "config --global --edit"
+git config --global alias.ci "commit"
+git config --global alias.co "checkout"
+# Discard all unstaged changes
+git config --global alias.cod "checkout ."
+# Discard all unstaged changes and reset to the last commit
+git config --global alias.rh "reset HEAD"
+git config --global alias.aa "add -A"
+# Delete all untracked files
+git config --global alias.cdf "clean -df"
+# Git pull rebase
+git config --global alias.pr "pull --rebase"
+git config --global alias.br "branch"
+git config --global alias.bra "branch -a"
+git config --global alias.amend "commit -a --amend --no-edit"
+git config --global alias.ciam "commit -a --amend --no-edit"
