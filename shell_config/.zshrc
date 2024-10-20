@@ -33,3 +33,8 @@ unset file
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/vault vault
+
+# fzf configuration
+# Ignores files in ~/.fdignore
+# Starts search from HOME directory
+export FZF_DEFAULT_COMMAND="fd --type f . $HOME"

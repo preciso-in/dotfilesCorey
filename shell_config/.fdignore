@@ -1,0 +1,15 @@
+/Library/ 
+/System/
+/Applications/
+.git/ 
+/usr/share/
+/private/ 
+/usr/lib/
+/usr/libexec/
+'com.apple*'/
+Library/
+Pictures/
+Music/
+node_modules/
+go/pkg/
+tutorial/lib/

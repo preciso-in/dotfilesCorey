@@ -8,6 +8,7 @@ DOTFILES_DIR=$(dirname $SCRIPT_DIR)
 files=(
   aliases
   envt_vars
+  fdignore
   functions
   plugins
   prompt
