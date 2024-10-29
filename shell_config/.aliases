@@ -48,6 +48,7 @@ alias tosh='ssh tosh-lin@192.168.0.102'
 alias cls="reset"
 alias loadusb='sudo pkill -f fsck'
 alias vim="nvim "
+alias vi="nvim "
 
 # Git Aliases
 alias gsm='git switch main'
