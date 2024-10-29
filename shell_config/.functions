@@ -99,5 +99,69 @@ function chtsht() {
   $HOME/scripts/cheatsheet.sh
 }
 
+wtEdit() {
+  File="$HOME/Desktop/work/Programming/personal-projects/chrome-extension/SiteCleaner/sites/others/webtoon/$2"
+
+  # remove leading and trailing spaces in input
+  input=$(echo "$1" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+  # echo $input
+  # return
+
+  start_pattern=$3
+  end_pattern="].map(standardiseString);"
+
+  # Get the JS Array from the file
+  wTArray=$(sed -n "/${start_pattern}/,/${end_pattern}/p" "${File}")
+  # echo $wTArray
+
+  # Remove JS syntax from the JS Array and only keep the WT names
+  wTList=$(echo "$wTArray" | sed -e '1s/.*\[//' -e '$s/\].*//')
+  # echo $wTList
+
+  appendedWTList=$(echo "$wTList" | cat && echo "\"$input\",")
+  # echo $appendedWTList
+
+  appendedWTList=$(echo "$wTList" | cat && echo "\"$input\",")
+  # echo $appendedWTList
+
+  # Remove leading and trailing spaces from each element in the new list
+  normalisedAppendedWTList=$(echo "$appendedWTList" | awk '{$1=$1; print}' | sort -u)
+  # echo $normalisedAppendedWTList
+
+  # Remove empty lines from the new list
+  newWTList=$(echo "$normalisedAppendedWTList" | sed '/^[[:space:]]*$/d')
+  # echo 'start' && echo $newWTList && echo 'end'
+
+  # Reconstruct the JS Array
+  echo $newWTList | sed -e "1s/^/$start_pattern\n/" >temp.js
+  echo "$end_pattern" >>temp.js
+
+  prettier --write temp.js 1>/dev/null
+  # cat temp.js
+
+  # Replace the original file with the new one
+  mv temp.js $File
+  # cat $File
+}
+
+function wtIgnore() {
+  input=$1
+  file="ignoreWebtoonList.js"
+  start_pattern="const readOrIgnoreWebtoons = \["
+
+  wtEdit $input $file $start_pattern
+}
+
+function wtRead() {
+  input=$1
+  file="currentlyReadingList.js"
+  start_pattern="const currentlyReadingList = \["
+
+  wtEdit $input $file $start_pattern
+
+  # Remove the same from the ignore list
+  sed -i "/\"$1\"/d" $HOME/Desktop/work/Programming/personal-projects/chrome-extension/SiteCleaner/sites/others/webtoon/ignoreWebtoonList.js
+}
+
 unset FUNCTIONS_DIR
 unset DOTFILES_DIR
