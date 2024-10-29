@@ -89,6 +89,11 @@ function count_gcloud_instances() {
   $HOME/scripts/count-gcloud-instances.sh
 }
 
+function zsh_remote() {
+  curl -s https://gist.githubusercontent.com/nparkhe83/e34d4ab0ec66d6369131db8d8f3d8585/raw/9f52233422593685fe12477f6821aec7a057aff3/ZSh-for-remote.sh | pbcopy
+  echo 'Copied Remote Script to Clipboard'
+}
+
 function chrome() {
   echo "hi"
   cd ~
