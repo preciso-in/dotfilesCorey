@@ -31,3 +31,6 @@ git_repos
 # hosts (Adblock) file that is downloaded from git repo
 **/hosts
 DownloadedHosts
+block_disabled.txt
+block_enabled.txt
+adblock_hosts.txt

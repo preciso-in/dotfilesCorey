@@ -52,6 +52,9 @@ sudo cp $SCRIPT_DIR/adblock_hosts.txt /etc/hosts
 # Use a systemd service instead.
 # Prompt "Can you name a cronjob and see if it is already running?"
 
+# Create inputs for systemctl daemon
+source $SCRIPT_DIR/process_unproductive_sites.sh
+
 unset DOTFILES_DIR
 unset SCRIPT_DIR
 
