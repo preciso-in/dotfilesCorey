@@ -29,7 +29,7 @@ DOTFILES_DIR=$(dirname $SCRIPT_DIR)
 sudo unlink /etc/hosts
 sudo rm /etc/hosts
 
-pushd ../MacOS
+pushd ../../MacOS
 rm hosts
 rm downloaded-hosts
 touch hosts

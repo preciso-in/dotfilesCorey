@@ -18,4 +18,4 @@ read
 sudo mdutil -i off -d /Volumes/PortableSSD/
 
 # Download Ad Server Hosts from Steven Black's repo, add domains and update /etc/hosts
-./update-hosts.sh
+./hosts_scripts/update-hosts.sh

@@ -1,6 +1,6 @@
 #! /env/usr/bin zsh
 
-pushd ../MacOS
+pushd ../../MacOS
 
 last_line=$(grep -n 'cat new_host_entries' temp.txt | tail -n 1 | cut -d: -f1)
 
