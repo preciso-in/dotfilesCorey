@@ -55,6 +55,9 @@ sudo cp $SCRIPT_DIR/adblock_hosts.txt /etc/hosts
 # Create inputs for systemctl daemon
 source $SCRIPT_DIR/process_unproductive_sites.sh
 
+# Update hosts file to block streaming sites during 7AM to 9PM
+source $SCRIPT_DIR/filter_unproductive_sites.sh
+
 unset DOTFILES_DIR
 unset SCRIPT_DIR
 
