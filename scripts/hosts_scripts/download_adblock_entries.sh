@@ -34,7 +34,8 @@ function runDocker() {
 # Start docker if it's not running
 runDocker
 
-touch addblock_hosts.txt
+rm $SCRIPT_DIR/adblock_hosts.txt
+touch $SCRIPT_DIR/adblock_hosts.txt
 
 # Create hosts file from Steven Black's project
 docker run \
@@ -42,8 +43,8 @@ docker run \
   --platform linux/x86_64 \
   --rm \
   -it \
-  -v $DOTFILES_DIR/scripts/hosts_scripts/addblock_hosts.txt:/etc/hosts \
+  -v $SCRIPT_DIR/adblock_hosts.txt:/etc/hosts \
   ghcr.io/stevenblack/hosts:latest updateHostsFile.py \
   --auto \
   --replace \
-  --extensions gambling porn fakenews
+  --extensions gambling porn fakenews 1>/dev/null
