@@ -4,7 +4,7 @@
 #                                                                                        #
 # Inputs:                                                                                #
 #   - add_host_entries (List maintained by me)                                           #
-#   - addblock_hosts.txt (Downloaded by download_docker_entries.sh)                      #
+#   - addblock_hosts.txt (Downloaded by download_adblock_entries.sh)                      #
 #                                                                                        #
 # Outputs:                                                                               #
 #   - /etc/hosts                                                                         #
