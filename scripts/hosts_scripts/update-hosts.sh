@@ -29,7 +29,6 @@ DOTFILES_DIR=$(dirname $SCRIPT_DIR)
 sudo unlink /etc/hosts
 sudo rm /etc/hosts
 
-pushd ../../MacOS
 rm hosts
 rm downloaded-hosts
 touch hosts
@@ -61,8 +60,6 @@ sudo cp hosts /etc/hosts
 
 rm downloaded-hosts
 rm hosts
-
-popd
 
 unset DOTFILES_DIR
 unset SCRIPT_DIR

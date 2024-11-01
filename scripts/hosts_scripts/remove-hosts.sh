@@ -1,7 +1,5 @@
 #! /env/usr/bin zsh
 
-pushd ../../MacOS
-
 last_line=$(grep -n 'cat new_host_entries' temp.txt | tail -n 1 | cut -d: -f1)
 
 line_to_add="sed -i \047\047 \047/$1/d\047 hosts"
