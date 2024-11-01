@@ -1,65 +1,55 @@
 #! /usr/bin/env zsh
 
-# Check if Docker is running
-if ! docker info &>/dev/null; then
-  echo "Docker is not running. Starting Docker..."
-  # Start Docker
-  if [ "$(uname)" = "Darwin" ]; then
-    # On macOS, use the Docker Desktop app
-    open -a Docker
-  else
-    # On Linux, use the systemctl command
-    sudo systemctl start docker
-  fi
+##########################################################################################
+#                                                                                        #
+# Inputs:                                                                                #
+#   - add_host_entries (List maintained by me)                                           #
+#   - addblock_hosts.txt (Downloaded by download_docker_entries.sh)                      #
+#                                                                                        #
+# Outputs:                                                                               #
+#   - /etc/hosts                                                                         #
+#                                                                                        #
+# addblock_hosts file collates entries from                                              #
+#  - add_host_entries (extra entries made by me)                                         #
+#                                                                                        #
+# Copies addblock_hosts to                                                               #
+#  - /etc/hosts                                                                          #
+#                                                                                        #
+# addblock_hosts                                                                         #
+#  - will be further modified to block streaming sites during 7AM to 9PM                 #
+#  - by filter_unproductive_sites.sh                                                     #
+#                                                                                        #
+##########################################################################################
 
-  # Wait for Docker to start
-  while ! docker info &>/dev/null; do
-    echo "Waiting for Docker to start..."
-    sleep 1
-  done
-  echo "Docker is now running."
-else
-  echo "Docker is already running."
-fi
-
-# Add Adblock hosts file to OS
 SCRIPT_DIR=$(dirname $(readlink -f "$0"))
 DOTFILES_DIR=$(dirname $SCRIPT_DIR)
 
-sudo unlink /etc/hosts
 sudo rm /etc/hosts
+rm addblock_hosts.txt
 
-rm hosts
-rm downloaded-hosts
-touch hosts
-touch downloaded-hosts
+# Get addblock_hosts.txt from Docker
+source download_addblock_entries.sh
 
-# Create hosts file from Steven Black's project
-docker run \
-  --pull always \
-  --platform linux/x86_64 \
-  --rm \
-  -it \
-  -v $DOTFILES_DIR/MacOS/downloaded-hosts:/etc/hosts \
-  ghcr.io/stevenblack/hosts:latest updateHostsFile.py \
-  --auto \
-  --replace \
-  --extensions gambling porn fakenews
+echo "\n\n" >>addblock_hosts.txt
 
-cat downloaded-hosts >>hosts
+echo -e "\nAdding additional hosts entries..." >>addblock_hosts.txt
+cat add_host_entries >>addblock_hosts.txt
 
-echo "\n\n" >>hosts
+# Removing entries like reddit, googleapis, gstatic from addblock
+sed -i '' '/reddit/d' addblock_hosts.txt
+sed -i '' '/redd.it/d' addblock_hosts.txt
+sed -i '' '/googleapis/d' addblock_hosts.txt
+sed -i '' '/gstatic/d' addblock_hosts.txt
 
-cat add_host_entries >>hosts
-sed -i '' '/reddit/d' hosts
-sed -i '' '/redd.it/d' hosts
-sed -i '' '/googleapis/d' hosts
-sed -i '' '/gstatic/d' hosts
+sudo cp addblock_hosts.txt /etc/hosts
 
-sudo cp hosts /etc/hosts
-
-rm downloaded-hosts
-rm hosts
+# Some entries like streaming sites, etc will be filtered out during 7AM to 9PM using a cronjob.
+# Refer to filter_unproductive_sites.sh
+# TODO: Add cronjob to run filter_unproductive_sites.sh every 15 minutes.
+# Check if cronjob is already running.
+# Since, cronjob cannot be named, it is difficult to check if it's running or not.
+# Use a systemd service instead.
+# Prompt "Can you name a cronjob and see if it is already running?"
 
 unset DOTFILES_DIR
 unset SCRIPT_DIR
