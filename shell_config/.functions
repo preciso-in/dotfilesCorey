@@ -35,21 +35,25 @@ function cdf() {
 }
 
 function codef() {
+  CURR_DIR=$(pwd)
   if [[ "$1" == "." || "$1" == ".." ]]; then
     code .
   else
     j $1
     code $(pwd)
   fi
+  cd $CURR_DIR
 }
 
 function cursorf() {
+  CURR_DIR=$(pwd)
   if [[ "$1" == "." || "$1" == ".." ]]; then
     code .
   else
     j $1
     cursor $(pwd)
   fi
+  cd $CURR_DIR
 }
 
 function onlyYAMLKeys() {
