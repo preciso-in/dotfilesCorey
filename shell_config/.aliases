@@ -92,3 +92,14 @@ git config --global alias.br "branch"
 git config --global alias.bra "branch -a"
 git config --global alias.amend "commit -a --amend --no-edit"
 git config --global alias.ciam "commit -a --amend --no-edit"
+
+# Useful Docker aliases
+alias dc='docker compose'
+alias dcn='docker container'
+alias dcnls='docker container ls'
+alias dcnlsa='docker container ls -a'
+alias dcnrm='docker container rm'
+alias dcns='docker container stop'
+alias dils='docker image ls'
+alias dilsnames="docker image ls | awk '{print \$1}'"
+alias dirm='docker image rm'
