@@ -36,5 +36,9 @@ ln -sf $DOTFILES_DIR/settings/skhd $HOME/.config/skhd
 # Add user and email details to global config
 ./git-setup.sh
 
+# Add atuin config
+mkdir -p $HOME/.config/atuin
+ln -sf $DOTFILES_DIR/settings/atuin/config.toml $HOME/.config/atuin/config.toml
+
 unset DOTFILES_DIR
 unset SCRIPT_DIR
