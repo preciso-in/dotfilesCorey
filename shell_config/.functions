@@ -108,7 +108,7 @@ function chtsht() {
   $HOME/scripts/cheatsheet.sh
 }
 
-wtEdit() {
+wtAddToFile() {
   File="$HOME/Desktop/work/Programming/personal-projects/chrome-extension/SiteCleaner/sites/others/webtoon/$2"
 
   # remove leading and trailing spaces in input
@@ -153,23 +153,36 @@ wtEdit() {
   # cat $File
 }
 
+function removeFromFile() {
+  lineToBeRemovedString=$1
+
+  File="$HOME/Desktop/work/Programming/personal-projects/chrome-extension/SiteCleaner/sites/others/webtoon/$2"
+
+  # sed -i "/\"$1\"/d" $File
+  sed -i "/\"$lineToBeRemovedString\"/d" $File
+}
+
 function wtIgnore() {
   input=$1
-  file="ignoreWebtoonList.js"
+  appendFile="ignoreWebtoonList.js"
+  removeFromFile="currentlyReadingList.js"
   start_pattern="const readOrIgnoreWebtoons = \["
 
-  wtEdit $input $file $start_pattern
+  wtAddToFile $input $appendFile $start_pattern
+
+  removeFromFile $input $removeFromFile
 }
 
 function wtRead() {
   input=$1
-  file="currentlyReadingList.js"
+  appendFile="currentlyReadingList.js"
+  removeFromFile="ignoreWebtoonList.js"
   start_pattern="const currentlyReadingList = \["
 
-  wtEdit $input $file $start_pattern
+  wtAddToFile $input $appendFile $start_pattern
 
   # Remove the same from the ignore list
-  sed -i "/\"$1\"/d" $HOME/Desktop/work/Programming/personal-projects/chrome-extension/SiteCleaner/sites/others/webtoon/ignoreWebtoonList.js
+  removeFromFile $input $removeFromFile
 }
 
 unset FUNCTIONS_DIR
