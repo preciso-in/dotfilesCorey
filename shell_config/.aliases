@@ -57,6 +57,7 @@ alias gsm='git switch main'
 alias ll='eza -alh'
 alias tree='eza -T'
 alias treel2='eza -T -L 2'
+alias treel3='eza -T -L 3'
 alias ls='eza -G'
 
 # Kubectl alias
@@ -103,3 +104,6 @@ alias dcns='docker container stop'
 alias dils='docker image ls'
 alias dilsnames="docker image ls | awk '{print \$1}'"
 alias dirm='docker image rm'
+
+# Useful Code aliases
+alias c.='code .'
