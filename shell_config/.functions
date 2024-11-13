@@ -163,7 +163,7 @@ function removeFromFile() {
 }
 
 function wtIgnore() {
-  input=$1
+  input=$*
   appendFile="ignoreWebtoonList.js"
   removeFromFile="currentlyReadingList.js"
   start_pattern="const readOrIgnoreWebtoons = \["
@@ -174,7 +174,7 @@ function wtIgnore() {
 }
 
 function wtRead() {
-  input=$1
+  input=$*
   appendFile="currentlyReadingList.js"
   removeFromFile="ignoreWebtoonList.js"
   start_pattern="const currentlyReadingList = \["
