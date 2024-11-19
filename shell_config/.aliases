@@ -104,6 +104,7 @@ alias dcns='docker container stop'
 alias dils='docker image ls'
 alias dilsnames="docker image ls | awk '{print \$1}'"
 alias dirm='docker image rm'
+alias dcnlsnames="docker container ls -a --format '{{.Names}}: {{.Status}}'"
 
-# Useful Code aliases
+# Useful VSCode aliases
 alias c.='code .'
