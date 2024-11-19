@@ -136,12 +136,10 @@ wtAddToFile() {
   echo $newWTList | sed -e "1s/^/$start_pattern\n/" >temp.js
   echo "$end_pattern" >>temp.js
 
-  prettier --write temp.js 1>/dev/null
-  # cat temp.js
-
   # Replace the original file with the new one
   mv temp.js $File
-  # cat $File
+
+  prettier $File --write $File 1>/dev/null
 }
 
 function removeFromFile() {
