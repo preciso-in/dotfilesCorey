@@ -172,6 +172,19 @@ function wtRead() {
 
   # Remove the same from the ignore list
   removeFromFile $input $removeFromFile
+
+}
+
+function vwtr() {
+  local File="$HOME/Desktop/work/Programming/personal-projects/chrome-extension/SiteCleaner/sites/others/webtoon/currentlyReadingList.js"
+
+  vi $File
+}
+
+function vwti() {
+  local File="$HOME/Desktop/work/Programming/personal-projects/chrome-extension/SiteCleaner/sites/others/webtoon/ignoreWebtoonList.js"
+
+  vi $File
 }
 
 unset FUNCTIONS_DIR
