@@ -76,7 +76,7 @@ function onlyYAMLKeys() {
     echo $1 | sed 's/: .*/:/' | yq
     return
   else
-    cho "No input is provided"
+    echo "No input is provided"
 
     echo "\nHelp for onlyYAMLKeys"
     echo "Returns YAML structure without the values from a given file or stdin"
