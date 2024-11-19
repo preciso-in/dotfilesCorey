@@ -20,7 +20,7 @@ chmod -R +x ${DOTFILES_DIR}/scripts/
 function touch2() { mkdir -p "$(dirname "$1")" && touch "$1"; }
 
 function mkcd() {
-  last=$(eval "echo \$$#")
+  local last=$(eval "echo \$$#")
   if [ ! -n "$last" ]; then
     echo "Enter a directory name"
   elif [ -d $last ]; then
@@ -35,7 +35,7 @@ function cdf() {
 }
 
 function cj() {
-  CURR_DIR=$(pwd)
+  local CURR_DIR=$(pwd)
   if [[ "$1" == "." || "$1" == ".." ]]; then
     code .
   else
@@ -46,7 +46,7 @@ function cj() {
 }
 
 function cursorf() {
-  CURR_DIR=$(pwd)
+  local CURR_DIR=$(pwd)
   if [[ "$1" == "." || "$1" == ".." ]]; then
     code .
   else
@@ -109,37 +109,28 @@ function chtsht() {
 }
 
 wtAddToFile() {
-  File="$HOME/Desktop/work/Programming/personal-projects/chrome-extension/SiteCleaner/sites/others/webtoon/$2"
+  local File="$HOME/Desktop/work/Programming/personal-projects/chrome-extension/SiteCleaner/sites/others/webtoon/$2"
 
   # remove leading and trailing spaces in input
-  input=$(echo "$1" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
-  # echo $input
-  # return
+  local input=$(echo "$1" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
 
-  start_pattern=$3
-  end_pattern="].map(standardiseString);"
+  local start_pattern=$3
+  local end_pattern="].map(standardiseString);"
 
   # Get the JS Array from the file
-  wTArray=$(sed -n "/${start_pattern}/,/${end_pattern}/p" "${File}")
-  # echo $wTArray
+  local wTArray=$(sed -n "/${start_pattern}/,/${end_pattern}/p" "${File}")
 
   # Remove JS syntax from the JS Array and only keep the WT names
-  wTList=$(echo "$wTArray" | sed -e '1s/.*\[//' -e '$s/\].*//')
-  # echo $wTList
+  local wTList=$(echo "$wTArray" | sed -e '1s/.*\[//' -e '$s/\].*//')
 
-  appendedWTList=$(echo "$wTList" | cat && echo "\"$input\",")
-  # echo $appendedWTList
-
-  appendedWTList=$(echo "$wTList" | cat && echo "\"$input\",")
-  # echo $appendedWTList
+  # Add new item to list
+  local appendedWTList=$(echo "$wTList" | cat && echo "\"$input\",")
 
   # Remove leading and trailing spaces from each element in the new list
-  normalisedAppendedWTList=$(echo "$appendedWTList" | awk '{$1=$1; print}' | sort -u)
-  # echo $normalisedAppendedWTList
+  local normalisedAppendedWTList=$(echo "$appendedWTList" | awk '{$1=$1; print}' | sort -u)
 
   # Remove empty lines from the new list
-  newWTList=$(echo "$normalisedAppendedWTList" | sed '/^[[:space:]]*$/d')
-  # echo 'start' && echo $newWTList && echo 'end'
+  local newWTList=$(echo "$normalisedAppendedWTList" | sed '/^[[:space:]]*$/d')
 
   # Reconstruct the JS Array
   echo $newWTList | sed -e "1s/^/$start_pattern\n/" >temp.js
@@ -156,28 +147,28 @@ wtAddToFile() {
 function removeFromFile() {
   lineToBeRemovedString=$1
 
-  File="$HOME/Desktop/work/Programming/personal-projects/chrome-extension/SiteCleaner/sites/others/webtoon/$2"
+  local File="$HOME/Desktop/work/Programming/personal-projects/chrome-extension/SiteCleaner/sites/others/webtoon/$2"
 
-  # sed -i "/\"$1\"/d" $File
   sed -i "/\"$lineToBeRemovedString\"/d" $File
 }
 
 function wtIgnore() {
-  input=$*
-  appendFile="ignoreWebtoonList.js"
-  removeFromFile="currentlyReadingList.js"
-  start_pattern="const readOrIgnoreWebtoons = \["
+  local input=$*
+  local appendFile="ignoreWebtoonList.js"
+  local removeFromFile="currentlyReadingList.js"
+  local start_pattern="const readOrIgnoreWebtoons = \["
 
   wtAddToFile $input $appendFile $start_pattern
 
+  # Remove the same from the Read list
   removeFromFile $input $removeFromFile
 }
 
 function wtRead() {
-  input=$*
-  appendFile="currentlyReadingList.js"
-  removeFromFile="ignoreWebtoonList.js"
-  start_pattern="const currentlyReadingList = \["
+  local input=$*
+  local appendFile="currentlyReadingList.js"
+  local removeFromFile="ignoreWebtoonList.js"
+  local start_pattern="const currentlyReadingList = \["
 
   wtAddToFile $input $appendFile $start_pattern
 
