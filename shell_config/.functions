@@ -3,6 +3,22 @@
 FUNCTIONS_DIR=$(dirname $(readlink -f "$0"))
 DOTFILES_DIR=$(dirname $FUNCTIONS_DIR)
 
+# List all aliases
+function listAliases() {
+  echo "show = Show hidden files in Finder"
+  echo "hide = Hide hidden files in Finder"
+  echo "clean = Clean up the Trash and Downloads folders"
+  echo "chknet = Ping Google and check the response time"
+  echo "tosh = SSH to the Tosh server"
+  echo "loadusb = Kill fsck process"
+  echo "tree, treel2, treel3 = Tree aliases"
+  echo "\nkcrns, kgns, kgpv, kdpv, kdelpv, kepv = Kubectl aliases"
+  echo "\nst, sta, conf, cge, ci, co, cod, rh, aa, cldf, pr, br, bra, amend, ciam = Git aliases"
+  echo "dc, dcn, dcnls, dcnlsa, dcnrm, dcns, dils, dilsnames, dirm, dcnlsnames = Docker aliases"
+  echo "c. = Open current directory in VSCode"
+  echo "f. = Open current directory in Finder"
+}
+
 # List all functions
 function listFunctions() {
   echo "listAliases = List all aliases"
