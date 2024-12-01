@@ -5,14 +5,22 @@ DOTFILES_DIR=$(dirname $FUNCTIONS_DIR)
 
 # List all functions
 function listFunctions() {
-  echo "touch2"
-  echo "mkcd"
-  echo "cdf"
-  echo "count_gcloud_instances"
-  echo "list_fzf_commands"
-  echo "chrome"
-  echo "open_sites"
-  echo "chtsht"
+  echo "listAliases = List all aliases"
+  echo "addCardsFromFile = Create CSV for importing into Anki from text file"
+  echo "cdf = FuzzyFind folder from pattern. Excludes .vola, node_modules, .git, Library, Music, .local, .docker, Pictures"
+  echo "chrome = Open Chrome with URL"
+  echo "chtsht = Open cheatsheet"
+  echo "cj = Fuzzy Open directory in VSCode"
+  echo "count_gcloud_instances = Count GCloud instances"
+  echo "cursorf = Fuzzy Open directory in VSCode"
+  echo "mkcd = Make directory and cd into it"
+  echo "onlyYAMLKeys = Returns YAML structure without the values from a given file or stdin"
+  echo "touch2 = Create file and directory if they don't exist"
+  echo "vwti = Open ignoreWebtoonList.js in NVim"
+  echo "vwtr = Open currentlyReadingList.js in NVim"
+  echo "wtIgnore = Add WT to ignoreWebtoonList.js"
+  echo "wtRead = Add WT to currentlyReadingList.js"
+  echo "zsh_remote = Minimal ZSH config for remote terminal"
 }
 
 chmod -R +x ${DOTFILES_DIR}/scripts/
