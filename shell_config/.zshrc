@@ -1,6 +1,12 @@
 autoload -Uz colors && colors
 setopt PROMPT_SUBST
 
+# Define colors
+RED='\033[31m'
+GREEN='\033[32m'
+YELLOW='\033[33m'
+RESET='\033[0m'
+
 export PATH="/opt/homebrew/bin:$PATH"
 
 export ZSH="$HOME/.oh-my-zsh"
@@ -40,4 +46,5 @@ complete -o nospace -C /opt/homebrew/bin/vault vault
 export FZF_DEFAULT_COMMAND="fd --type f . $HOME"
 
 # Print all functions in current session
+echo -e "\n"
 listFunctions
