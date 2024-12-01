@@ -108,7 +108,7 @@ function chtsht() {
   $HOME/scripts/cheatsheet.sh
 }
 
-wtAddToFile() {
+function wtAddToFile() {
   local File="$HOME/Desktop/work/Programming/personal-projects/chrome-extension/SiteCleaner/sites/others/webtoon/$2"
 
   # remove leading and trailing spaces in input
@@ -185,6 +185,33 @@ function vwti() {
   local File="$HOME/Desktop/work/Programming/personal-projects/chrome-extension/SiteCleaner/sites/others/webtoon/ignoreWebtoonList.js"
 
   vi $File
+}
+
+function addCardsFromFile() {
+  local relativeInputPath=$1
+
+  local absoluteInputPath=$(realpath $relativeInputPath)
+
+  # Check if realpath succeeded
+  if [[ $? -ne 0 ]]; then
+    echo "Error: Unable to resolve path: $relativeInputPath"
+    return 1
+  fi
+
+  echo -e "Absolute path: $absoluteInputPath"
+
+  local CURR_DIR=$(pwd)
+
+  cd ~/Desktop/work/Programming/personal-projects/anki-card-creator/src
+
+  mkdir -p ~/Desktop/AnkiCardsCSV
+  touch ~/Desktop/AnkiCardsCSV/output.csv
+
+  ts-node index.ts $absoluteInputPath
+
+  mv $absoluteInputPath ~/Desktop/ankiCards/CSVWorking
+
+  cd $CURR_DIR
 }
 
 unset FUNCTIONS_DIR
