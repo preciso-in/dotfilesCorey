@@ -38,3 +38,6 @@ complete -o nospace -C /opt/homebrew/bin/vault vault
 # Ignores files in ~/.fdignore
 # Starts search from HOME directory
 export FZF_DEFAULT_COMMAND="fd --type f . $HOME"
+
+# Print all functions in current session
+listFunctions
