@@ -50,9 +50,6 @@ alias loadusb='sudo pkill -f fsck'
 alias vim="nvim "
 alias vi="nvim "
 
-# Git Aliases
-alias gsm='git switch main'
-
 # eza Aliases
 alias ll='eza -alh'
 alias tree='eza -T'
@@ -86,7 +83,7 @@ git config --global alias.cod "checkout ."
 git config --global alias.rh "reset HEAD"
 git config --global alias.aa "add -A"
 # Delete all untracked files
-git config --global alias.cdf "clean -df"
+git config --global alias.cldf "clean -df"
 # Git pull rebase
 git config --global alias.pr "pull --rebase"
 git config --global alias.br "branch"
@@ -108,3 +105,6 @@ alias dcnlsnames="docker container ls -a --format '{{.Names}}: {{.Status}}'"
 
 # Useful VSCode aliases
 alias c.='code .'
+
+# Other aliases
+alias f.='open .'
