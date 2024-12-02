@@ -29,7 +29,9 @@ function listFunctions() {
   echo "  ${YELLOW}chtsht${RESET}                 = ${GREEN}Open cheatsheet${RESET}"
   echo "  ${YELLOW}cj${RESET}                     = ${GREEN}Fuzzy Open directory in VSCode${RESET}"
   echo "  ${YELLOW}count_gcloud_instances${RESET} = ${GREEN}Count GCloud instances${RESET}"
+  echo "  ${YELLOW}copyTag${RESET}                = ${GREEN}Copy Anki tag to clipboard${RESET}"
   echo "  ${YELLOW}cursorf${RESET}                = ${GREEN}Fuzzy Open directory in VSCode${RESET}"
+  echo "\n  ${YELLOW}getTagsFromAnki${RESET}        = ${GREEN}Extract tags from Anki CSV. To export all tags in Anki, move all decks into one parent deck and then export the parent deck.${RESET}\n"
   echo "  ${YELLOW}mkcd${RESET}                   = ${GREEN}Make directory and cd into it${RESET}"
   echo "\n  ${YELLOW}onlyYAMLKeys${RESET}           = ${GREEN}Returns YAML structure without the values from a given file or stdin${RESET}\n"
   echo "  ${YELLOW}touch2${RESET}                 = ${GREEN}Create file and directory if they don't exist${RESET}"
@@ -237,6 +239,15 @@ function addCardsFromFile() {
   mv $absoluteInputPath ~/Desktop/ankiCards/CSVWorking
 
   cd $CURR_DIR
+}
+
+function getTagsFromAnki() {
+  # awk -F'\t' '{print $27}' ~/Desktop/ankiCards/CSVWorking/export.csv | sort --ignore-case | uniq >~/Desktop/ankiCards/Anki-Tags.txt
+  awk -F'\t' -v column=$1 '{print $column}' ~/Desktop/ankiCards/CSVWorking/export.csv | sort --ignore-case | uniq >~/Desktop/ankiCards/Anki-Tags.txt
+}
+
+function copyTag() {
+  cat ~/Desktop/ankiCards/Anki-Tags.txt | fzf | pbcopy
 }
 
 unset FUNCTIONS_DIR
