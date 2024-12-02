@@ -55,7 +55,7 @@
   "editor.fontSize": 15,
   "debug.console.fontSize": 15,
   "terminal.integrated.fontSize": 15,
-  "window.zoomLevel": -0.1,
+  "window.zoomLevel": -0.4,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
@@ -97,7 +97,6 @@
   "git.autofetch": true,
   "files.associations": {
     "**/.gitignore": "plaintext",
-    "**/hosts": "plaintext",
     "**/*rc": "plaintext",
     "**/*.txt": "plaintext"
   },
@@ -114,5 +113,12 @@
   "diffEditor.maxComputationTime": 0,
   "vim.easymotion": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "window.title": "Code - ${activeEditorShort}${separator}${rootName}${separator}${profileName}"
+  "window.title": "Code - ${activeEditorShort}${separator}${rootName}${separator}${profileName}",
+  "supermaven.enable": {
+    "*": true
+  },
+  "supermaven.allowGitignore": true,
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  }
 }
