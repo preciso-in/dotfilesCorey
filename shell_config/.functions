@@ -22,7 +22,8 @@ function listAliases() {
 # List all functions
 function listFunctions() {
   echo "${RED}Functions Available For Use:${RESET}"
-  echo "  ${YELLOW}listAliases${RESET}            = ${GREEN}List all aliases${RESET}"
+  echo "\n  ${YELLOW}listAliases${RESET}            = ${GREEN}List all aliases${RESET}"
+  echo "  ${YELLOW}listVimMaps${RESET}            = ${GREEN}List all Vim maps${RESET}\n"
   echo "  ${YELLOW}addCardsFromFile${RESET}       = ${GREEN}Create CSV for importing into Anki from text file${RESET}"
   echo "\n  ${YELLOW}cdf${RESET}                    = ${GREEN}FuzzyFind folder from pattern. Excludes .vola, node_modules, .git, Library, Music, .local, .docker, Pictures${RESET}\n"
   echo "  ${YELLOW}chrome${RESET}                 = ${GREEN}Open Chrome with URL${RESET}"
@@ -248,6 +249,15 @@ function getTagsFromAnki() {
 
 function copyTag() {
   cat ~/Desktop/ankiCards/Anki-Tags.txt | fzf | pbcopy
+}
+
+function listVimMaps() {
+  echo "${RED}Vim Maps Available For Use:${RESET}"
+  echo "  ${YELLOW},c${RESET}            = ${GREEN}Copy to clipboard${RESET}"
+  echo "  ${YELLOW},p${RESET}            = ${GREEN}Paste from clipboard${RESET}"
+  echo "  ${YELLOW},g${RESET}            = ${GREEN}Format Card HTML for Anki${RESET}"
+
+  echo "\n  ${YELLOW},ac${RESET}           = ${GREEN}Format Note - Adds 'Qn: ' and 'Ans: '${RESET}\n"
 }
 
 unset FUNCTIONS_DIR
