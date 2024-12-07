@@ -243,12 +243,15 @@ function addCardsFromFile() {
 }
 
 function getTagsFromAnki() {
-  # awk -F'\t' '{print $27}' ~/Desktop/ankiCards/CSVWorking/export.csv | sort --ignore-case | uniq >~/Desktop/ankiCards/Anki-Tags.txt
-  awk -F'\t' -v column=$1 '{print $column}' ~/Desktop/ankiCards/CSVWorking/All_Anki_Notes.txt | tr ' ' '\n' | sort --ignore-case | uniq >~/Desktop/ankiCards/Anki-Tags.txt
+  awk -F'\t' -v column=$1 '{print $column}' ~/Desktop/ankiCards/CSVWorking/All_Anki_Notes.txt | tr ' ' '\n' | sort --ignore-case | uniq >~/Desktop/ankiCards/CSVWorking/Anki-Tags.txt
+
+  grep -vxFf ~/Desktop/ankiCards/CSVWorking/ignoreTags.txt ~/Desktop/ankiCards/CSVWorking/Anki-Tags.txt >~/Desktop/ankiCards/CSVWorking/Anki-Tags-temp.txt
+
+  mv ~/Desktop/ankiCards/CSVWorking/Anki-Tags-temp.txt ~/Desktop/ankiCards/CSVWorking/Anki-Tags.txt
 }
 
 function copyTag() {
-  cat ~/Desktop/ankiCards/Anki-Tags.txt | fzf | pbcopy
+  cat ~/Desktop/ankiCards/CSVWorking/Anki-Tags.txt | fzf | pbcopy
 }
 
 function listVimMaps() {
