@@ -251,7 +251,7 @@ function getTagsFromAnki() {
 }
 
 function copyTag() {
-  cat ~/Desktop/ankiCards/CSVWorking/Anki-Tags.txt | fzf | pbcopy
+  cat ~/Desktop/ankiCards/CSVWorking/Anki-Tags.txt | fzf --multi | tr '\n' ' ' | pbcopy
 }
 
 function listVimMaps() {
