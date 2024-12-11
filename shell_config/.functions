@@ -255,9 +255,16 @@ function addCardsFromFile() {
 function getTagsFromAnki() {
   awk -F'\t' -v column=$1 '{print $column}' ~/Desktop/ankiCards/CSVWorking/All_Anki_Notes.txt | tr ' ' '\n' | sort --ignore-case | uniq >~/Desktop/ankiCards/CSVWorking/Anki-Tags.txt
 
-  grep -vxFf ~/Desktop/ankiCards/CSVWorking/ignoreTags.txt ~/Desktop/ankiCards/CSVWorking/Anki-Tags.txt >~/Desktop/ankiCards/CSVWorking/Anki-Tags-temp.txt
+  grep -vxFf ~/Desktop/work/Programming/personal-projects/dotfilesCorey/settings/anki_ignore_tags.txt ~/Desktop/ankiCards/CSVWorking/Anki-Tags.txt >~/Desktop/ankiCards/CSVWorking/Anki-Tags-temp.txt
 
   mv ~/Desktop/ankiCards/CSVWorking/Anki-Tags-temp.txt ~/Desktop/ankiCards/CSVWorking/Anki-Tags.txt
+
+  # All_Anki_Notes.txt is at least 62MB,
+  # It slows down VSCode
+  # It contains data that should be ignored by SuperMaven.
+  # Hence, it is better to make it blank.
+  # However, should not delete the file as the file name is referred to in Bash scripts here.
+  echo "" >~/Desktop/ankiCards/CSVWorking/All_Anki_Notes.txt
 }
 
 function copyTag() {
