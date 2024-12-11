@@ -238,6 +238,15 @@ function addCardsFromFile() {
 
   ts-node index.ts $absoluteInputPath
 
+  # Remove Column headers from the output file as it creates a new anki card for just the column headers
+  sed -i '1d' ~/Desktop/ankiCards/CSVWorking/output.csv
+
+  # Add Anki headers to output file
+  sed -i '1i #html:false' ~/Desktop/ankiCards/CSVWorking/output.csv
+  sed -i '1i #columns:Text,Extra,Tags' ~/Desktop/ankiCards/CSVWorking/output.csv
+  sed -i '1i #deck:1Import' ~/Desktop/ankiCards/CSVWorking/output.csv
+  sed -i '1i #separator:comma' ~/Desktop/ankiCards/CSVWorking/output.csv
+
   mv $absoluteInputPath ~/Desktop/ankiCards/CSVWorking
 
   cd $CURR_DIR
