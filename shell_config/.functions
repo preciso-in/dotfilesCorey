@@ -24,6 +24,7 @@ function listFunctions() {
   echo "${RED}Functions Available For Use:${RESET}"
   echo "\n  ${YELLOW}listAliases${RESET}            = ${GREEN}List all aliases${RESET}"
   echo "  ${YELLOW}listVimMaps${RESET}            = ${GREEN}List all Vim maps${RESET}\n"
+  echo "  ${YELLOW}listKBShortcuts${RESET}          = ${GREEN}List all shortcuts${RESET}\n"
   echo "  ${YELLOW}addCardsFromFile${RESET}       = ${GREEN}Create CSV for importing into Anki from text file${RESET}"
   echo "\n  ${YELLOW}cdf${RESET}                    = ${GREEN}FuzzyFind folder from pattern. Excludes .vola, node_modules, .git, Library, Music, .local, .docker, Pictures${RESET}\n"
   echo "  ${YELLOW}chrome${RESET}                 = ${GREEN}Open Chrome with URL${RESET}"
@@ -261,6 +262,18 @@ function listVimMaps() {
   echo "  ${YELLOW},g${RESET}            = ${GREEN}Format Card HTML for Anki${RESET}"
 
   echo "\n  ${YELLOW},ac${RESET}           = ${GREEN}Format Note - Adds 'Qn: ' and 'Ans: '${RESET}\n"
+}
+
+function listAnkiKBShortcuts() {
+  echo "${RED}Anki Shortcuts Available For Use:${RESET}"
+  echo "  ${YELLOW}Cmd+Shift+I${RESET}   = ${GREEN}Import Cards from CSV${RESET}"
+  echo "  ${YELLOW}Cmd+Shift+E${RESET}   = ${GREEN}Export Selected Cards from Anki Browser${RESET}"
+}
+
+function listKBShortcuts() {
+  echo "${RED}Shortcuts Available For Use:${RESET}"
+  echo "  ${YELLOW}listAnkiShortcuts${RESET}  = ${GREEN}List all Anki shortcuts${RESET}"
+  echo "${RED}Shortcuts to add for Excel, VSCode, Obsidian, NVim, Chrome, and more:${RESET}"
 }
 
 unset FUNCTIONS_DIR
