@@ -7,6 +7,31 @@
 #############################################################################
 
 {
+  # Set configuration for vim
+  echo -e '\n\nConfiguring Vim'
+  cat <<EOF >.vimrc
+"Remap ESC to jk and JK
+inoremap jk <ESC>
+inoremap JK <ESC>
+
+" Set line numbers to show
+set nu
+set relativenumber
+
+" Set Cursor to blinking line in insert mode
+" Set Cursor to block for Normal mode
+let &t_SI = "\e[5 q"
+let &t_EI = "\e[0 q"
+
+" Fix delay when changing cursor from Insert to Normal mode and back
+set ttimeout
+set ttimeoutlen=1
+set ttyfast
+
+set tabstop=2
+set expandtab
+EOF
+
   # Install thefuck plugin code
   echo -e '\n\nInstalling thefuck - 1/6'
   echo -e 'Pending Installs - neofetch, lsd, Tree, ZSh & OhMyZSh'
@@ -62,31 +87,6 @@
   echo -e '\nprecmd() {
   echo -e "\n\n"
 }' >>.zshrc
-
-  # Set configuration for vim
-  echo -e '\n\nConfiguring Vim'
-  cat <<EOF >.vimrc
-"Remap ESC to jk and JK
-inoremap jk <ESC>
-inoremap JK <ESC>
-
-" Set line numbers to show
-set nu
-set relativenumber
-
-" Set Cursor to blinking line in insert mode
-" Set Cursor to block for Normal mode
-let &t_SI = "\e[5 q"
-let &t_EI = "\e[0 q"
-
-" Fix delay when changing cursor from Insert to Normal mode and back
-set ttimeout
-set ttimeoutlen=1
-set ttyfast
-
-set tabstop=2
-set expandtab
-EOF
 
   # Update yq version
   echo -e "\n\nUpdating yq version"
