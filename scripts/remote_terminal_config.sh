@@ -32,6 +32,10 @@ set tabstop=2
 set expandtab
 EOF
 
+  # Get ArgoCD admin password
+  # For use in killercoda argocd scenarios
+  alias argosec="kubectl get secret -n argocd argocd-initial-admin-secret -o json | jq -r '.data.password' | base64 -d; echo"
+
   # Install thefuck plugin code
   echo -e '\n\nInstalling thefuck - 1/6'
   echo -e 'Pending Installs - neofetch, lsd, Tree, ZSh & OhMyZSh'

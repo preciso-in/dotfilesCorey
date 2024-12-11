@@ -41,6 +41,8 @@ function listFunctions() {
   echo "  ${YELLOW}vwtr${RESET}                   = ${GREEN}Open currentlyReadingList.js in NVim${RESET}"
   echo "  ${YELLOW}wtIgnore${RESET}               = ${GREEN}Add WT to ignoreWebtoonList.js${RESET}"
   echo "  ${YELLOW}wtRead${RESET}                 = ${GREEN}Add WT to currentlyReadingList.js${RESET}"
+  # echo "  ${YELLOW}wtTempIgnore${RESET}           = ${GREEN}Add WT to tempIgnoreWebtoonList.js${RESET}"
+  # echo "  ${YELLOW}wtTempClean${RESET}            = ${GREEN}Clean tempIgnoreWebtoonList.js${RESET}"
   echo "  ${YELLOW}zsh_remote${RESET}             = ${GREEN}Minimal ZSH config for remote terminal${RESET}"
 }
 
@@ -123,7 +125,7 @@ function count_gcloud_instances() {
 }
 
 function zsh_remote() {
-  curl -s https://gist.githubusercontent.com/nparkhe83/e34d4ab0ec66d6369131db8d8f3d8585/raw/cfe58fde17669373d6b8ff74ae45c4cd4920c410/ZSh-for-remote.sh | pbcopy
+  curl -s https://gist.githubusercontent.com/nparkhe83/e34d4ab0ec66d6369131db8d8f3d8585/raw/98767c7c7fdd8d52445276578c90881969cec184/ZSh-for-remote.sh | pbcopy
   echo 'Copied Remote Script to Clipboard'
 }
 
@@ -189,6 +191,85 @@ function wtIgnore() {
 
   # Remove the same from the Read list
   removeFromFile $input $removeFromFile
+}
+
+function wtTempIgnore() {
+  # set -x
+  local input=$*
+  echo "input: $input"
+  read
+
+  wtTempClean
+
+  local appendFile="tempIgnoreWebtoonList.js"
+  local start_pattern="const tempIgnoreWebtoonList = \["
+
+  local File="$HOME/Desktop/work/Programming/personal-projects/chrome-extension/SiteCleaner/sites/others/webtoon/$appendFile"
+  local FileTemp="$HOME/Desktop/work/Programming/personal-projects/chrome-extension/SiteCleaner/sites/others/webtoon/temp$appendFile"
+
+  # Remove whitespaces from the input
+  local trimmedInput=$(echo "$input" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+  echo "trimmedInput: $trimmedInput"
+  read
+
+  local end_pattern="]; \n\nmodule.exports = { tempIgnoreWebtoonList };"
+
+  # Get the JS Array from the file
+  local wTTempArray=$(sed -n "/${start_pattern}/,/];/p" "${File}")
+  echo "wTTempArray: $wTTempArray"
+  echo "wTTempArray with special characters:"
+  printf '%q\n' "$wTTempArray"
+  read
+
+  # Remove JS syntax from the JS Array and only keep the WT objects
+  local wTTempList=$(echo "$wTTempArray" | sed -e '1s/.*\[//' -e '$s/\].*//')
+  echo "wTTempList: $wTTempList"
+  read
+
+  # Add new item to list
+  local appendedWTTempList=$(echo "$wTTempList" | cat && echo "{ name: \"$trimmedInput\", timeAdded: $(date +%s) },")
+  echo "appendedWTTempList: $appendedWTTempList"
+  read
+
+  # Remove leading and trailing spaces from each element in the new list
+  local normalisedAppendedWTTempList=$(echo "$appendedWTTempList" | awk '{$1=$1; print}' | sort -u)
+  echo "normalisedAppendedWTTempList: $normalisedAppendedWTTempList"
+  read
+
+  # Remove empty lines from the new list
+  local newWTTempList=$(echo "$normalisedAppendedWTTempList" | sed '/^[[:space:]]*$/d')
+  echo "newWTTempList: $newWTTempList"
+  read
+
+  # Reconstruct the JS Array
+  echo "$start_pattern" >temp.js
+  echo $newWTTempList >>temp.js
+  echo "$end_pattern" >>temp.js
+
+  mv temp.js $FileTemp
+
+  prettier $FileTemp --write $FileTemp 1>/dev/null
+}
+
+function wtTempClean() {
+  local CURR_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+
+  local WorkingDir="$HOME/Desktop/work/Programming/personal-projects/chrome-extension/SiteCleaner/sites/others/webtoon"
+  cd $WorkingDir
+
+  node cleanTempIgnoreWebtoonList.js
+
+  echo "const tempIgnoreWebtoonList = " >temp2.js
+  cat temp.js >>temp2.js
+
+  echo "\n\nmodule.exports = { tempIgnoreWebtoonList };" >>temp2.js
+
+  prettier temp2.js --write temp2.js 1>/dev/null
+
+  mv temp2.js $WorkingDir/tempIgnoreWebtoonList.js
+  rm temp.js
+
+  cd $CURR_DIR
 }
 
 function wtRead() {
@@ -277,7 +358,9 @@ function listVimMaps() {
   echo "  ${YELLOW},p${RESET}            = ${GREEN}Paste from clipboard${RESET}"
   echo "  ${YELLOW},g${RESET}            = ${GREEN}Format Card HTML for Anki${RESET}"
 
-  echo "\n  ${YELLOW},ac${RESET}           = ${GREEN}Format Note - Adds 'Qn: ' and 'Ans: '${RESET}\n"
+  echo "\n  ${YELLOW},ac${RESET}           = ${GREEN}Format Note - Adds 'Qn: ' and 'Ans: '${RESET}"
+
+  echo "\n  ${YELLOW},i${RESET}            = ${GREEN}Paste image name from clipboard into anki Note${RESET}"
 }
 
 function listAnkiKBShortcuts() {
